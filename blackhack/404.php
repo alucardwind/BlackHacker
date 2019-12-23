@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php
+	global $page, $paged;
+	wp_title( '|', true, 'right' );
+	bloginfo( 'name' );
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s'), max( $paged, $page ) );
+	?>
+</title>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
+<script>
+	window.onload = function(){
+		setTimeout(function(){window.location.href="https://www.redonleft.com";},10000);
+	};
+</script>
+</head>
+<body >
+<!-- page wrap -->
+<div id="page"<?php if(!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
+	<div id="header">
+		<div id="logoborder">
+			<div id="logoright">
+				<div id="displayr">
+					<div id="name">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					</div>
+					<div class="info">
+						<?php bloginfo( 'description' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<style>
+		h1{
+			font-size: 40px;
+			text-align: center;
+			margin-top: 20%;
+		}
+	</style>
+	<div id="border">
+		<h1>这里是404错误页面<br />显示本页意味着你请求的页面不存在<br />本页将在10秒后跳转至主页</h1>
+	</div>
+</div>	
+</body>
+</html>

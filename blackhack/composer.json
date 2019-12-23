@@ -1,0 +1,5 @@
+{
+    "require": {
+        "xiaosier/libweibo": "dev-master"
+    }
+}
