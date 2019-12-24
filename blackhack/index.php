@@ -48,7 +48,7 @@
 					   document.cookie = "page_width="+page_width;
 					   location.reload(true);
 				   }
-			</script>
+              </script>
                   <div id="fitchrome">
                     <div id="button-border">
                       <div id="button-out" class="0"><a>Open Page</a></div>

@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:Black Hacker
-Version: 2.1.4
+Version: 2.1.5
 Author:左半红印
 Description:黑色简洁主题
 Author URI:http://www.redonleft.com/
@@ -307,9 +307,11 @@ padding-bottom: 100px;
 	line-height: 40px;
 	border-top: 2px solid #58c7ee;
 	border-bottom: 2px solid #58c7ee;
-}	
+}
+
 #title .title_hover{
-	background: red;
+	/*background: red;*/
+	background-image: linear-gradient(to right, rgba(88,199,238,0), rgba(255,0,0,0.5), rgba(88,199,238,0));
 }
 	#prompt{
 		float: left;		
@@ -521,8 +523,17 @@ padding-bottom: 100px;
 		padding: 5px;
 		margin: 5px;
 		border-top: 1px #fff solid;
+		}
+
+	.postwords figcaption{
+		font-style: italic;
+		font-weight: bold;
 		border-bottom: 1px #fff solid;
-		}	
+		text-align: center;
+		margin-left: 5px;
+		margin-right: 5px;
+
+	}
 
 	.postwords blockquote{
 		padding: 5px;
@@ -962,7 +973,6 @@ figure{
 	padding: 0;
 }
 #weibo table{
-	float: left;
 	border-spacing: 0;
 	margin-top: 20px;
 	margin-bottom: 20px;
