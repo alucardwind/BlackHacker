@@ -38,7 +38,7 @@ function runEffectout() {
 									$("#button_out_left").toggle("slide", {direction: "up"}, 800,function(){
 										if(sidebar_fix_bool){
 											sidebar_fix();
-											sidebar_weibo_a()
+											sidebar_weibo_a();
 										}
 									});
 									
@@ -203,9 +203,12 @@ function sidebar_light(){
 }
 
 function submit(){
-	var searchsubmit = document.getElementById("searchsubmit");
-	//searchsubmit.src = "images/submit.png";
-	searchsubmit.value = "";
+	var searchsubmit = document.querySelectorAll("#searchsubmit");
+	if(searchsubmit.length > 0){
+		for(var i=0; i < searchsubmit.length; i++){
+			searchsubmit[i].value = "";
+		}
+	}
 }
 
 function nav_menu_left(){
