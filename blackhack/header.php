@@ -16,10 +16,13 @@ require 'vendor/autoload.php'
 			echo ' | ' . sprintf( __( 'Page %s'), max( $paged, $page ) );
 		?>
 	</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.6">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 	<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/blackHackFunction.js"></script>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/mobile.css" type="text/css" media="screen" />
 	<!-- require APlayer -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -54,6 +57,12 @@ require 'vendor/autoload.php'
 					title_hover(title_a[auto_i]);
 				});
 			}
+
+            $("#to_right_buttom").click(function () {
+                $( ".move_right" ).switchClass( "move_right","move_left",600 );
+                $( ".move_left" ).switchClass( "move_left","move_right",600 );
+            });
+
 		});
 	
 	</script>

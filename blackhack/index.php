@@ -3,17 +3,25 @@
 <div id="border">
     <div class="mask-main">
       <div class="mask-left">  
-          <!-- first column -->          
+          <!-- first column -->
+          <?php include 'sidebar_mobile.php'; ?>
           <div id="col1" class="col1">          
               <script type='text/javascript'>
 				var page_width = document.querySelector("body").offsetWidth;
 				var yes;
+				var yes_thin;
 				if(page_width >= 1871){
 					yes = 1;
 				}
 				else{
 					yes = 0;
 				}
+				if(page_width < 1000){
+				    yes_thin = 1;
+                }
+				else{
+				    yes_thin = 0;
+                }
 				if(yes==1){
 					var page = document.querySelector("#page");
 					$(page).css("width","1871px");
@@ -24,6 +32,7 @@
 					var col1 = document.querySelector(".col1");
 					$(col1).css("width","1574px");
 				}
+
 				  var check_name = "page_width=";
 				  var co_array = document.cookie.split(';');
 				  var check_same = false;

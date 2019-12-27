@@ -37,7 +37,6 @@
 	'num_position' => 'after'
 	)); 
 	?>
-</div>  
-
+</div>
 
 

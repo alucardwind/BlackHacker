@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:Black Hacker
-Version: 2.1.5
+Version: 2.2.0
 Author:左半红印
 Description:黑色简洁主题
 Author URI:http://www.redonleft.com/
@@ -40,18 +40,15 @@ img, div {
 
 body{
   font-family: "微软雅黑", Hei;
-  font-size: 15px;
+  font-size: 1em;
   font-style: normal;
   color: #CCC;
-  /*background: url(images/body_bg_1_small.png) top right no-repeat, url(images/body_bg_2_small.png) bottom left no-repeat;*/
-	background: url(images/homeworld3_background.jpg) no-repeat;
-	background-size: cover;
   min-height:100%;
   height:auto !important; /* ie6 ignores it */
   height:100%; /* fix */
   position: relative;
-	width: 100%;
-	margin: auto;
+	background: url(images/homeworld3_background.jpg) no-repeat;
+	background-size: cover;
 	background-attachment: fixed;
 }
 
@@ -80,8 +77,6 @@ a:hover{
   width: 1350px;
   margin: 0 auto;
   position: relative;
-  /*background: url(images/page_bg_small.png) top center no-repeat;*/
-	background-attachment: fixed;
 }
 
 #border{
@@ -288,7 +283,7 @@ padding-bottom: 100px;
 	}
 
 #title{
-	font-size: 18px;
+	font-size: 1.2em;
 	margin-top: 60px;
 	margin-bottom: 0px;
 	height: 69px;
@@ -388,7 +383,7 @@ padding-bottom: 100px;
 
 .sticky .postwords p{
 	text-indent: 0;
-	margin-bottom: 2px;
+	margin-bottom: 1px;
 }
 .sticky #postwords_bottom{
 	background-color: rgba(88,199,238,0.2);
@@ -427,6 +422,7 @@ padding-bottom: 100px;
 .sticky #comments_inline .comments-title{
 	float: left;
 	width: 35%;
+	margin-bottom: 0;
 }
 .sticky #comments_inline form{
 	float: none;
@@ -442,7 +438,6 @@ padding-bottom: 100px;
 	border-left: 2px #58c7ee solid;
 	border-right: 2px #58c7ee solid;
 	border-bottom: 0;
-	margin-top: 23px;
 }
 .sticky #comment_right{
 	float: right;
@@ -607,6 +602,7 @@ figure{
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
+	z-index: 0;
 }
 
 #fitimg{
@@ -970,20 +966,20 @@ figure{
 	margin: 0;
 }
 #weibo{
-	padding: 0;
+	padding-top: 10px;
+	clear: both;
 }
 #weibo table{
-	border-spacing: 0;
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
 #weibo table td{
 	border: 1px #58c7ee solid;
 	width: 121px;
+	text-align: center;
 }
 #touch_limit{
-	width: 80%;
-	margin-left: 10%;
+
 }
 #touch_limit tr td{
 	text-align: center;
@@ -1018,6 +1014,14 @@ figure{
 #re_user_hit{
 	color: #000;
 	background:linear-gradient(to right,rgba(88,199,238,1),rgba(88,199,238,0.2));
+}
+#re_ip_hit_red{
+	color: #000;
+	background:linear-gradient(to right,rgba(255,0,0,1),rgba(255,0,0,0.2));
+}
+#re_user_hit_red{
+	color: #000;
+	background:linear-gradient(to right, rgba(255,0,0,1),rgba(255,0,0,0.2));
 }
 .weibo_user{
 	text-align: right;
