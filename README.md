@@ -17,3 +17,6 @@ https://github.com/alucardwind/redonleft_copyright<br>
 <b>libweibo</b><br>
 https://github.com/xiaosier/libweibo<br>
 新浪微博开放平台php sdk<br>
+<b>Font-Awesome</b><br>
+https://github.com/FortAwesome/Font-Awesome<br>
+可编程网络图标库<br>
