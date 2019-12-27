@@ -33,4 +33,8 @@ window.onload = function () {
 		sidebar_fix();
 	}
 	sidebar_fix_h2();
+	mobile_buttom_up();
+	mobile_buttom_down();
+	mobile_sidebar_up();
+	mobile_sidebar_down();
 };

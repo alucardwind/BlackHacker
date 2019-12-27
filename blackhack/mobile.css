@@ -5,13 +5,37 @@
     z-index: 10;
 }
 
+#col3_con1{
+    float: left;
+    width: 230px;
+}
+
 #to_right_buttom{
     display: none;
-    background-color: #58c7ee;
     font-size: 24px;
     color: #000000;
     font-weight: bold;
+    float: left;
+    width: 43px;
+    margin-top: 20px;
+    cursor: default;
+}
+
+#mobile_button_up{
+    float: left;
+    width: 43px;
+    height: 43px;
+}
+#mobile_buttom_content{
+    background-color: #58c7ee;
+    float: left;
+    width: 43px;
     text-align: center;
+}
+#mobile_button_down{
+    float: left;
+    width: 43px;
+    height: 43px;
 }
 
 .move_right{
@@ -22,12 +46,28 @@
     left: -232;
 }
 
+#mobile_sidebar_up{
+    width: 230px;
+    height: 20px;
+    float: left;
+}
+
+#mobile_sidebar_down{
+    width: 230px;
+    height: 20px;
+    float: left;
+}
+
 #sidebar_moble{
     float: left;
     width: 230px;
     border-right: 2px solid #58c7ee;
     background-color: #000000;
     font-size: 20px;
+}
+
+#sidebar_moble li{
+    list-style: none;
 }
 
 #sidebar_moble li h2{

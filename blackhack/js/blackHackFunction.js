@@ -1098,3 +1098,69 @@ function sidebar_weibo_a(){
 		sidebar_fix_bool = false;
 	}
 }
+
+function mobile_buttom_up() {
+	var buttom_up = document.getElementById("mobile_button_up");
+	if(!buttom_up){return;}
+	var dat_tx = buttom_up.getContext("2d");
+	dat_tx.beginPath();
+	dat_tx.scale(2,2);
+	dat_tx.moveTo(0,0);
+	dat_tx.lineTo(0,43);
+	dat_tx.lineTo(43,43);
+	dat_tx.strokeStyle = "#58c7ee";
+	dat_tx.stroke();
+	dat_tx.fillStyle = "#58c7ee";
+	dat_tx.fill();
+}
+
+function mobile_buttom_down() {
+	var buttom_down = document.getElementById("mobile_button_down");
+	if(!buttom_down){return;}
+	var dat_tx = buttom_down.getContext("2d");
+	dat_tx.beginPath();
+	dat_tx.scale(2,2);
+	dat_tx.moveTo(43,0);
+	dat_tx.lineTo(0,0);
+	dat_tx.lineTo(0,43);
+	dat_tx.strokeStyle = "#58c7ee";
+	dat_tx.stroke();
+	dat_tx.fillStyle = "#58c7ee";
+	dat_tx.fill();
+}
+
+function mobile_sidebar_up() {
+	var sidebar_up = document.getElementById("mobile_sidebar_up");
+	if(!sidebar_up){return;}
+	var dat_tx = sidebar_up.getContext("2d");
+	dat_tx.beginPath();
+	dat_tx.scale(2,2);
+	dat_tx.moveTo(0,1);
+	dat_tx.lineTo(210,1);
+	dat_tx.lineTo(230,19);
+	dat_tx.lineTo(0,19);
+	dat_tx.lineWidth = 2;
+	dat_tx.strokeStyle = "#58c7ee";
+	dat_tx.stroke();
+	dat_tx.globalAlpha = 0.2;
+	dat_tx.fillStyle = "#58c7ee";
+	dat_tx.fill();
+}
+
+function mobile_sidebar_down() {
+	var sidebar_down = document.getElementById("mobile_sidebar_down");
+	if(!sidebar_down){return;}
+	var dat_tx = sidebar_down.getContext("2d");
+	dat_tx.beginPath();
+	dat_tx.scale(2,2);
+	dat_tx.moveTo(0,1);
+	dat_tx.lineTo(230,1);
+	dat_tx.lineTo(210,19);
+	dat_tx.lineTo(0,19);
+	dat_tx.lineWidth = 2;
+	dat_tx.strokeStyle = "#58c7ee";
+	dat_tx.stroke();
+	dat_tx.globalAlpha = 0.2;
+	dat_tx.fillStyle = "#58c7ee";
+	dat_tx.fill();
+}
