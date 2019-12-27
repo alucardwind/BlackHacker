@@ -7,7 +7,7 @@ https://www.redonleft.com/wp-content/themes/blackhack/screenshot.png
 主题中所使用的开源项目包括以下：<br>
 <b>MetingJS</b><br>
 https://github.com/metowolf/MetingJS<br>
-网页音频播放器
+网页音频播放器<br>
 <b>redonleft_player</b><br>
 https://github.com/alucardwind/redonleft_player<br>
 用于将上面的播放器与wordpress相结合，可在后台直接控制播放器播放音频和视频<br>
