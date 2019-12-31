@@ -20,10 +20,12 @@ https://github.com/xiaosier/libweibo<br>
 <b>Font-Awesome</b><br>
 https://github.com/FortAwesome/Font-Awesome<br>
 可编程网络图标库<br>
-主题样式表中已经包含了以下wordpress插件的样式设定<br>
+<br>
+主题样式表中已经包含了以下wordpress插件的样式设定<br>请自行下载这些插件<br>
 <b>Prime Strategy Page Navi<br>
 Sidebar Login<br>
         WP User Avatar</b><br>
+        <br>
 <b>在使用本主题时请注意：</b><br>
 微博外联展示功能通过微博API实现，而微博API需要用户自行前往https://open.weibo.com/
 申请权限，本主题并不提供相关权限。<br>
