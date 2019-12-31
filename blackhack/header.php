@@ -57,14 +57,7 @@ require 'vendor/autoload.php'
 					title_hover(title_a[auto_i]);
 				});
 			}
-
-            $("#to_right_buttom").click(function () {
-                $( ".move_right" ).switchClass( "move_right","move_left",600 );
-                $( ".move_left" ).switchClass( "move_left","move_right",600 );
-            });
-
-		});
-	
+        });
 	</script>
 </head>
 <body >

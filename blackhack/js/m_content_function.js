@@ -1,7 +1,4 @@
 window.onload = function () {
-	//img_fix();
-	//light();
-	//sidebar_light();
 	nav_menu_left();
 	button_out_left();
 	button_out_right();
@@ -21,14 +18,6 @@ window.onload = function () {
 	date_right();
 	date_left();
 	submit();
-	//title_right_single();
-	//title_left_single();
-	//date1_left_single();
-	//date1_right_single();
-	//postwords_left_single();
-	//postwords_right_single();
-	//datei_left_single();
-	//datei_bottom_single();
 	if(sidebar_fix_bool){
 		sidebar_fix();
 	}
@@ -37,4 +26,5 @@ window.onload = function () {
 	mobile_buttom_down();
 	mobile_sidebar_up();
 	mobile_sidebar_down();
+	col3_sidebar_action();
 };

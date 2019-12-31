@@ -33,4 +33,5 @@ window.onload = function () {
 		sidebar_fix();
 	}
 	sidebar_fix_h2();
+	col3_sidebar_action();
 };

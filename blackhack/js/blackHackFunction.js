@@ -1100,67 +1100,152 @@ function sidebar_weibo_a(){
 }
 
 function mobile_buttom_up() {
-	var buttom_up = document.getElementById("mobile_button_up");
+	var buttom_up = document.getElementsByClassName("mobile_button_up");
 	if(!buttom_up){return;}
-	var dat_tx = buttom_up.getContext("2d");
-	dat_tx.beginPath();
-	dat_tx.scale(2,2);
-	dat_tx.moveTo(0,0);
-	dat_tx.lineTo(0,43);
-	dat_tx.lineTo(43,43);
-	dat_tx.strokeStyle = "#58c7ee";
-	dat_tx.stroke();
-	dat_tx.fillStyle = "#58c7ee";
-	dat_tx.fill();
+	for(var i = 0; i < buttom_up.length; i++){
+		var dat_tx = buttom_up[i].getContext("2d");
+		dat_tx.beginPath();
+		dat_tx.scale(2,2);
+		dat_tx.moveTo(0,0);
+		dat_tx.lineTo(0,43);
+		dat_tx.lineTo(43,43);
+		dat_tx.strokeStyle = "#58c7ee";
+		dat_tx.stroke();
+		dat_tx.fillStyle = "#58c7ee";
+		dat_tx.fill();
+	}
 }
 
 function mobile_buttom_down() {
-	var buttom_down = document.getElementById("mobile_button_down");
+	var buttom_down = document.getElementsByClassName("mobile_button_down");
 	if(!buttom_down){return;}
-	var dat_tx = buttom_down.getContext("2d");
-	dat_tx.beginPath();
-	dat_tx.scale(2,2);
-	dat_tx.moveTo(43,0);
-	dat_tx.lineTo(0,0);
-	dat_tx.lineTo(0,43);
-	dat_tx.strokeStyle = "#58c7ee";
-	dat_tx.stroke();
-	dat_tx.fillStyle = "#58c7ee";
-	dat_tx.fill();
+	for(var i = 0; i < buttom_down.length; i++){
+		var dat_tx = buttom_down[i].getContext("2d");
+		dat_tx.beginPath();
+		dat_tx.scale(2,2);
+		dat_tx.moveTo(43,0);
+		dat_tx.lineTo(0,0);
+		dat_tx.lineTo(0,43);
+		dat_tx.strokeStyle = "#58c7ee";
+		dat_tx.stroke();
+		dat_tx.fillStyle = "#58c7ee";
+		dat_tx.fill();
+	}
 }
 
 function mobile_sidebar_up() {
-	var sidebar_up = document.getElementById("mobile_sidebar_up");
+	var sidebar_up = document.getElementsByClassName("mobile_sidebar_up");
 	if(!sidebar_up){return;}
-	var dat_tx = sidebar_up.getContext("2d");
-	dat_tx.beginPath();
-	dat_tx.scale(2,2);
-	dat_tx.moveTo(0,1);
-	dat_tx.lineTo(210,1);
-	dat_tx.lineTo(230,19);
-	dat_tx.lineTo(0,19);
-	dat_tx.lineWidth = 2;
-	dat_tx.strokeStyle = "#58c7ee";
-	dat_tx.stroke();
-	dat_tx.globalAlpha = 0.2;
-	dat_tx.fillStyle = "#58c7ee";
-	dat_tx.fill();
+	for(var i = 0; i <sidebar_up.length; i++){
+		var dat_tx = sidebar_up[i].getContext("2d");
+		dat_tx.beginPath();
+		dat_tx.scale(2,2);
+		dat_tx.moveTo(0,1);
+		dat_tx.lineTo(210,1);
+		dat_tx.lineTo(230,19);
+		dat_tx.lineTo(0,19);
+		dat_tx.lineWidth = 2;
+		dat_tx.strokeStyle = "#58c7ee";
+		dat_tx.stroke();
+		dat_tx.globalAlpha = 0.2;
+		dat_tx.fillStyle = "#58c7ee";
+		dat_tx.fill();
+	}
 }
 
 function mobile_sidebar_down() {
-	var sidebar_down = document.getElementById("mobile_sidebar_down");
+	var sidebar_down = document.getElementsByClassName("mobile_sidebar_down");
 	if(!sidebar_down){return;}
-	var dat_tx = sidebar_down.getContext("2d");
-	dat_tx.beginPath();
-	dat_tx.scale(2,2);
-	dat_tx.moveTo(0,1);
-	dat_tx.lineTo(230,1);
-	dat_tx.lineTo(210,19);
-	dat_tx.lineTo(0,19);
-	dat_tx.lineWidth = 2;
-	dat_tx.strokeStyle = "#58c7ee";
-	dat_tx.stroke();
-	dat_tx.globalAlpha = 0.2;
-	dat_tx.fillStyle = "#58c7ee";
-	dat_tx.fill();
+	for(var i = 0; i <sidebar_down.length; i++){
+		var dat_tx = sidebar_down[i].getContext("2d");
+		dat_tx.beginPath();
+		dat_tx.scale(2,2);
+		dat_tx.moveTo(0,1);
+		dat_tx.lineTo(230,1);
+		dat_tx.lineTo(210,19);
+		dat_tx.lineTo(0,19);
+		dat_tx.lineWidth = 2;
+		dat_tx.strokeStyle = "#58c7ee";
+		dat_tx.stroke();
+		dat_tx.globalAlpha = 0.2;
+		dat_tx.fillStyle = "#58c7ee";
+		dat_tx.fill();
+	}
+}
+
+function col3_sidebar_action() {
+	var col3_con1 = false;
+	var col3_con2 = false;
+	var col3_out = false;
+	var col3_out_in;
+	var col3_con1_block;
+	var col3_con2_block;
+	function col3_control_key() {
+		col3_out_in = document.getElementsByClassName("move_right");
+		if(col3_out_in.length > 0 ){
+			col3_out = true;
+		}
+		else {
+			col3_out = false;
+		}
+		col3_con1_block = document.getElementsByClassName("col3_con1_display_block");
+		if(col3_con1_block.length > 0){
+			col3_con1 = true;
+		}
+		else{
+			col3_con1 = false;
+		}
+		col3_con2_block = document.getElementsByClassName("col3_con2_display_block");
+		if(col3_con2_block.length > 0){
+			col3_con2 = true;
+		}
+		else {
+			col3_con2 = false;
+		}
+	}
+	$("#to_right_buttom").click(function () {
+		col3_control_key();
+		console.log(col3_out+"col3out");
+		console.log(col3_con1+"con1");
+		console.log(col3_con2+"con2");
+		if(!col3_out){
+			$("#col3_con2").removeClass("col3_con2_display_block");
+			$('#col3_con2').addClass("col3_con2_display_none");
+			$("#col3_con1").removeClass("col3_con1_display_none");
+			$('#col3_con1').addClass("col3_con1_display_block");
+			$( ".move_left" ).switchClass( "move_left","move_right",600 );
+		}
+		else if(col3_out && col3_con1){
+			$( ".move_right" ).switchClass( "move_right","move_left",600, "swing",function () {
+				$( "#col3_con1" ).switchClass( "col3_con1_display_block","col3_con1_display_none",600 );
+			});
+		}
+		else if(col3_out && col3_con2){
+			$("#col3_con2").removeClass("col3_con2_display_block");
+			$('#col3_con2').addClass("col3_con2_display_none");
+			$("#col3_con1").removeClass("col3_con1_display_none");
+			$('#col3_con1').addClass("col3_con1_display_block");
+		}
+	});
+	$("#page_to_right_buttom").click(function () {
+		col3_control_key();
+		if(!col3_out){
+			$("#col3_con1").removeClass("col3_con1_display_block");
+			$('#col3_con1').addClass("col3_con1_display_none");
+			$("#col3_con2").removeClass("col3_con2_display_none");
+			$('#col3_con2').addClass("col3_con2_display_block");
+			$( ".move_left" ).switchClass( "move_left","move_right",600 );
+		}
+		else if(col3_out && col3_con2){
+			$( ".move_right" ).switchClass( "move_right","move_left",600 , "swing",function () {
+				$( ".col3_con2_display_block" ).switchClass( "col3_con2_display_block","col3_con2_display_none",600 );
+			});
+		}
+		else if(col3_out && col3_con1){
+			$("#col3_con1").removeClass("col3_con1_display_block");
+			$('#col3_con1').addClass("col3_con1_display_none");
+			$("#col3_con2").removeClass("col3_con2_display_none");
+			$('#col3_con2').addClass("col3_con2_display_block");
+		}
+	});
 }

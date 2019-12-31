@@ -2,13 +2,13 @@
 
 /* 
 Theme Name:Black Hacker
-Version: 2.2.1
+Version: 2.2.2
 Author:左半红印
 Description:黑色简洁主题
-Author URI:http://www.redonleft.com/
+Author URI:https://www.redonleft.com/
 Tags: redonleft, black, hack
 Date: 07/05/2013
-Update: 06/26/2019
+Update: 12/26/2019
 (c) redonleft.com All Rights Reserved.
 */
 
@@ -379,6 +379,7 @@ padding-bottom: 100px;
 	margin-top: 10px;
 		margin-left: 0;
 		background: 0;
+		line-height: 136%;
 		}		
 
 .sticky .postwords p{
@@ -488,6 +489,8 @@ padding-bottom: 100px;
 	padding-left: 30px;
 	padding-right: 20px;
 	background: url(images/pw_bg.png) repeat-y;
+	line-height: 180%;
+	letter-spacing: 1px;
 	}
 
 	.postwords a{
@@ -543,7 +546,7 @@ padding-bottom: 100px;
 		}
 
 .postwords p{
-	text-indent: 30px;
+	text-indent: 34px;
 	margin-bottom: 8px;
 }
 .postwords ol{
