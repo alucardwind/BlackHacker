@@ -23,16 +23,5 @@ https://github.com/FortAwesome/Font-Awesome<br>
 <b>在使用本主题时请注意：</b><br>
 微博外联展示功能通过微博API实现，而微博API需要用户自行前往https://open.weibo.com/
 申请权限，本主题并不提供相关权限。<br>
-如果不想使用此功能，请打开主目录下sidebar.php，查找24行并进行修改：<br>
-<blockquote>
-   <?php
+如果不想使用此功能，请打开主目录下sidebar.php，查找24行并删除下方语句：<br>
         include 'weibo.php';
-        rol_copyright();
-   ?>
-</blockquote>
-修改为：<br>
-<blockquote>
-   <?php
-        rol_copyright();
-   ?>
-</blockquote>
