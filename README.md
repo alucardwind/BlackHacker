@@ -30,4 +30,4 @@ Sidebar Login<br>
 微博外联展示功能通过微博API实现，而微博API需要用户自行前往https://open.weibo.com/
 申请权限，本主题并不提供相关权限。<br>
 如果不想使用此功能，请打开主目录下sidebar.php，查找24行并删除下方语句：<br>
-        include 'weibo.php';
+get_weibo();<br>
