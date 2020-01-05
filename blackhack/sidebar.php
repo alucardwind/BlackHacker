@@ -21,7 +21,8 @@
 			</form>
 		</div>
         <?php
-        include 'weibo.php';
+        get_weibo();
+        //include 'weibo.php';
         rol_copyright();
         ?>
 	</ul>
