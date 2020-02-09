@@ -32,3 +32,7 @@ Sidebar Login<br>
 申请权限，本主题并不提供相关权限。<br>
 如果不想使用此功能，请打开主目录下sidebar.php，查找24行并删除下方语句：<br>
 get_weibo();<br>
+如已经申请好相关权限，请参照下方链接安装并操作<br>
+https://github.com/xiaosier/libweibo<br>
+在weibo.php中修改34行，填入你的权限代码<br><br>
+$c = new SaeTClientV2( '', '', '' );<br>
