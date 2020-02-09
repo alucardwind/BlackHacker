@@ -34,5 +34,5 @@ Sidebar Login<br>
 get_weibo();<br>
 如已经申请好相关权限，请参照下方链接安装并操作<br>
 https://github.com/xiaosier/libweibo<br>
-在weibo.php中修改34行，填入你的权限代码<br><br>
+在weibo.php中修改34行，填入你的权限代码<br>
 $c = new SaeTClientV2( '', '', '' );<br>
