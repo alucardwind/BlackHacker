@@ -8,17 +8,7 @@
             <div class="col1">
                 <script type='text/javascript'>
                     var page_width = document.querySelector("body").offsetWidth;
-                    var yes;
-                    if (page_width >= 1871) {
-                        yes = 1;
-                    } else {
-                        yes = 0;
-                    }
-                    if (page_width < 1000) {
-                        yes_thin = 1;
-                    } else {
-                        yes_thin = 0;
-                    }
+                    fit_screen(page_width);
                     if (yes == 1) {
                         var page = document.querySelector("#page");
                         $(page).css("width", "1871px");
@@ -29,32 +19,7 @@
                         var col1 = document.querySelector(".col1");
                         $(col1).css("width", "1574px");
                     }
-                    var check_name = "page_width=";
-                    var co_array = document.cookie.split(';');
-                    console.log(page_width);
-                    console.log(yes);
-                    console.log(co_array);
-                    var check_same = false;
-                    for (var i = 0; i < co_array.length; i++) {
-                        var co = co_array[i].trim();
-                        if (co.indexOf(check_name) == 0) {
-                            var check_width = co.substring(check_name.length, co.length);
-                            if (check_width != page_width) {
-                                document.cookie = "width_bool=" + yes;
-                                document.cookie = "page_width=" + page_width;
-                                console.log(co_array);
-                                location.reload(true);
-                            } else {
-                                check_same = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (!check_same) {
-                        document.cookie = "width_bool=" + yes;
-                        document.cookie = "page_width=" + page_width;
-                        location.reload(true);
-                    }
+                    need_cookie();
                 </script>
                 <div id="rizhi">
                     <div id="fitchrome">
@@ -67,6 +32,11 @@
                             <canvas id="nav_menu_left" width="200" height="60"></canvas>
                         </div>
                     </div> <!-- 防止chrome浏览器错位 -->
+                    <script>
+                        nav_menu_left();
+                        button_out_left();
+                        button_out_right();
+                    </script>
                     <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
                     <?php /* If this is a category archive */
                     if (is_category()) { ?>
@@ -146,6 +116,20 @@
                         }
                     }
                     ?>
+                    <script>
+                        //comment_left();
+                        //comment_right();
+                        //comment_bottom();
+                        postwords_left();
+                        postwords_bottom();
+                        title_right();
+                        title_left();
+                        date1_right();
+                        date1_left();
+                        postwords_top();
+                        date_right();
+                        date_left();
+                    </script>
                     <!-- rizhi -->
                     <div id="last"></div>
                 </div>

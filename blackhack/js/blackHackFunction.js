@@ -2,6 +2,9 @@
 var t1;
 var t2;
 var sidebar_fix_bool = true;
+var yes;
+var yes_thin;
+var yes_middle;
 
 function runEffectout() {
 	$("#button-out").toggle("slide", {
@@ -18,6 +21,7 @@ function runEffectout() {
 			    var ia = iii+1;
 				if(ia === ptbder.length){
 					var img_fix_auto = new img_fix();
+					let m_img_fix_auto = new m_img_fix();
 					var sideber_li_ul = document.querySelectorAll('#sidebar li ul');
 					for(let ii=0; ii<sideber_li_ul.length; ii++){
 						$(sideber_li_ul[ii]).toggle("slide",{direction: "up"},600,function(){
@@ -106,6 +110,23 @@ function light() {
 
 function title_hover(select){
 	$(select).toggleClass("title_hover",500);
+}
+
+function m_img_fix(){
+	let img;
+	let img_width;
+	let img_height;
+	let bili;
+	let new_height;
+	let  figure_array = document.querySelectorAll('.wp-block-gallery');
+	if(figure_array.length > 0){
+		for(let i = 0; i < figure_array.length; i++){
+			img = figure_array[i].querySelectorAll('ul li figure a');
+			for(let ii = 0; ii < img.length; ii++) {
+				$(img[ii]).attr('target','_blank');
+			}
+		}
+	}
 }
 
 function img_fix(){
@@ -1248,4 +1269,49 @@ function col3_sidebar_action() {
 			$('#col3_con2').addClass("col3_con2_display_block");
 		}
 	});
+}
+
+function fit_screen(page_width) {
+	if (page_width >= 1871) {
+		yes = 1;
+	} else {
+		yes = 0;
+	}
+	if (page_width < 1000) {
+		yes_thin = 1;
+	} else {
+		yes_thin = 0;
+	}
+	if(page_width >= 1000 && page_width < 1349 ){
+		yes_middle = 1;
+	}
+	else {
+		yes_middle = 0;
+	}
+}
+
+function need_cookie() {
+	let check_name = "page_width=";
+	let co_array = document.cookie.split(';');
+	let check_same = false;
+	for (let i = 0; i < co_array.length; i++) {
+		let co = co_array[i].trim();
+		if (co.indexOf(check_name) == 0) {
+			let check_width = co.substring(check_name.length, co.length);
+			if (check_width != page_width) {
+				document.cookie = "width_bool=" + yes;
+				document.cookie = "page_width=" + page_width;
+				console.log(co_array);
+				location.reload(true);
+			} else {
+				check_same = true;
+				break;
+			}
+		}
+	}
+	if (!check_same) {
+		document.cookie = "width_bool=" + yes;
+		document.cookie = "page_width=" + page_width;
+		location.reload(true);
+	}
 }

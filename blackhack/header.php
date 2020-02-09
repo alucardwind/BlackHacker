@@ -95,3 +95,8 @@ require 'vendor/autoload.php'
             </div>
         </div>
     </div>
+    <script>
+        logo_right();
+        logo_left();
+        left_top();
+    </script>

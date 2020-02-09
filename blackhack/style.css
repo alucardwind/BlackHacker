@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:Black Hack
-Version: 2.2.3
+Version: 2.2.4
 Author:左半红印
 Description:黑色简洁主题
 Author URI:https://www.redonleft.com/
@@ -72,7 +72,6 @@ a:hover {
 /*以下为框架样式*/
 
 #page {
-    width: 1350px;
     margin: 0 auto;
     position: relative;
 }
@@ -87,13 +86,11 @@ a:hover {
     position: relative; /* This fixes the IE7 overflow hidden bug */
     clear: both;
     float: left;
-    width: 1350px;
     overflow: hidden; /* This chops off any overhanging divs */
 }
 
 .mask-left {
     float: left;
-    width: 1350px;
     position: relative;
 }
 
@@ -300,7 +297,7 @@ a:hover {
     margin-top: 60px;
     margin-bottom: 0px;
     height: 69px;
-    width: 495px;
+    width: 99%;
     padding: 0px;
 }
 
@@ -593,6 +590,22 @@ a:hover {
     margin-left: 2em;
 }
 
+.blocks-gallery-item{
+    list-style: none;
+    float: left;
+}
+
+.blocks-gallery-item img{
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+}
+
+.blocks-gallery-item__caption{
+    font-size: 0.7em;
+    line-height: 100%;
+}
+
 .single_postwords {
     width: 864px;
     background: 0;
@@ -734,7 +747,7 @@ figure {
 }
 
 #date {
-    width: 495px;
+    width: 99%;
     height: 30px;
     margin: 0;
 }
@@ -826,8 +839,27 @@ figure {
     display: none;
 }
 
-.nav-menu li:hover {
-    border-bottom-color: #06F;
+.nav-menu_yes_middle{
+    display: none;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.nav-menu_yes_middle ul {
+    font-size: 16px;
+    list-style-type: none;
+    float: right;
+    border-left: 2px solid #58c7ee;
+    border-right: 2px solid #58c7ee;
+}
+
+.nav-menu_yes_middle li {
+    float: right;
+    background: url(images/nav_menu.png) repeat-x;
+    padding: 3px 10px 6px 10px;
+    width: auto;
+    text-align: center;
 }
 
 /* comments */
@@ -1208,7 +1240,6 @@ figure {
     color: #58c7ee;
     padding: 4px;
     margin-top: 10px;
-
 }
 
 /*以下为footer样式*/

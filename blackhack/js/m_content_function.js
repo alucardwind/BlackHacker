@@ -1,27 +1,4 @@
 window.onload = function () {
-	nav_menu_left();
-	button_out_left();
-	button_out_right();
-	comment_left();
-	comment_right();
-	comment_bottom();
-	postwords_left();
-	postwords_bottom();
-	title_right();
-	title_left();
-	date1_right();
-	date1_left();
-	logo_right();
-	logo_left();
-	left_top();
-	postwords_top();
-	date_right();
-	date_left();
-	submit();
-	if(sidebar_fix_bool){
-		sidebar_fix();
-	}
-	sidebar_fix_h2();
 	mobile_buttom_up();
 	mobile_buttom_down();
 	mobile_sidebar_up();
