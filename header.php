@@ -23,6 +23,7 @@ require 'vendor/autoload.php'
     <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/blackHackFunction.js"></script>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/mobile.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ajax.css" type="text/css" media="screen"/>
     <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

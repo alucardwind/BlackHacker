@@ -676,6 +676,11 @@ figure {
     clear: both;
 }
 
+#show_large_image{
+    position: fixed;
+    z-index: 5;
+}
+
 #date1 {
     font-size: 15px;
     margin: 0;

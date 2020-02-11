@@ -5,6 +5,7 @@ var sidebar_fix_bool = true;
 var yes;
 var yes_thin;
 var yes_middle;
+var xmlhttp;
 
 function runEffectout() {
 	$("#button-out").toggle("slide", {
@@ -1314,4 +1315,71 @@ function need_cookie() {
 		document.cookie = "page_width=" + page_width;
 		location.reload(true);
 	}
+}
+
+function find_point_img() {
+	let img_array = document.querySelectorAll(".blocks-gallery-item figure");
+	let middle_line = page_width / 2;
+	for(let i = 0; i < img_array.length; i++){
+		$(img_array[i]).mouseenter(function () {
+			let img_div = this.querySelector('img');
+			let img_src = $(img_div).attr('src');
+			let ajax_img_width = img_div.naturalWidth;
+			let ajax_img_height = img_div.naturalHeight;
+			let bili_width_height = ajax_img_width / ajax_img_height;
+			let screen_heigth = document.documentElement.clientHeight;
+			if(ajax_img_width > middle_line){
+				ajax_img_width = middle_line - 50;
+				ajax_img_height = ajax_img_width / bili_width_height;
+			}
+			if(ajax_img_height > screen_heigth){
+				ajax_img_height = screen_heigth / 1.5;
+				ajax_img_width = ajax_img_height * bili_width_height;
+			}
+			change_content(img_src,ajax_img_width,ajax_img_height);
+			$("#show_large_image").toggle(300);
+			let x = this.offsetLeft;
+			let y = this.offsetTop - document.body.scrollTop + window.screenTop + document.body.clientTop;
+			let bor = document.getElementById("border");
+			let pag = document.getElementById("page");
+			let y3 = bor.offsetTop;
+			let x1 = pag.offsetLeft;
+			y = y + y3;
+			let bottom_y = screen_heigth - y - 40;
+			if(bottom_y < ajax_img_height){
+				y = y - ajax_img_height + bottom_y;
+			}
+			if(x < middle_line){
+				x = x1 + x + 160;
+			}
+			else {
+				x = x + x1 - ajax_img_width - 40;
+			}
+			$("#show_large_image").css("left",x+"px");
+			$("#show_large_image").css("top",y+"px");
+		});
+		$(img_array[i]).mouseleave(function () {
+			change_content("","","");
+			$("#show_large_image").css("display","none");
+		});
+	}
+}
+
+function change_content(src,imgwidth,imgheight) {
+	//let xmlhttp;
+	if (window.XMLHttpRequest) {
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		// IE6, IE5 浏览器执行代码
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function () {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			document.getElementById("show_large_image").innerHTML = xmlhttp.responseText;
+		}
+	}
+
+	xmlhttp.open("GET", "https://www.redonleft.com/wp-content/themes/blackhack/ajax/ajax_show_img.php?img_src="+src+"&imgwidth="+imgwidth+"&imgheight="+imgheight, true);
+	xmlhttp.send();
 }

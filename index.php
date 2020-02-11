@@ -3,6 +3,7 @@
 <div id="border">
     <div class="mask-main">
         <div class="mask-left">
+            <div id="show_large_image"></div>
             <!-- first column -->
             <?php include 'sidebar_mobile.php'; ?>
             <div id="col1" class="col1">
@@ -106,6 +107,7 @@
                     postwords_top();
                     date_right();
                     date_left();
+                    find_point_img();
                 </script>
                 <!-- rizhi -->
                 <div id="last"></div>
