@@ -1319,6 +1319,9 @@ function need_cookie() {
 
 function find_point_img() {
 	let img_array = document.querySelectorAll(".blocks-gallery-item figure");
+	if(img_array == null){
+		return;
+	}
 	let middle_line = page_width / 2;
 	for(let i = 0; i < img_array.length; i++){
 		$(img_array[i]).mouseenter(function () {

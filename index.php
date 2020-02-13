@@ -109,14 +109,13 @@
                     date_left();
                     find_point_img();
                 </script>
-                <!-- rizhi -->
                 <div id="last"></div>
             </div>
             <!-- col1 -->
             <?php get_sidebar(); ?>
             <script>
                 submit();
-                if(sidebar_fix_bool){
+                if (sidebar_fix_bool) {
                     sidebar_fix();
                 }
                 sidebar_fix_h2();

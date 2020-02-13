@@ -21,9 +21,9 @@
 <div id="border">
     <div class="mask-main">
         <div class="mask-left">
+            <div id="show_large_image"></div>
             <!-- first column -->
             <div class="col1">
-                <div id="rizhi">
                     <?php while (have_posts()) : the_post(); ?>
                         <!-- post -->
                         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
@@ -65,8 +65,10 @@
                             <!-- /post -->
                         </div>
                     <?php endwhile; // end of the loop. ?>
-                    <!-- rizhi -->
-                </div>
+                <script>
+                    var page_width = document.querySelector("body").offsetWidth;
+                    find_point_img();
+                </script>
                 <div id="last"></div>
             </div>
             <!-- col1 -->
