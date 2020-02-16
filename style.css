@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:Black Hack
-Version: 2.2.4
+Version: 2.4.0
 Author:左半红印
 Description:黑色简洁主题
 Author URI:https://www.redonleft.com/
@@ -38,7 +38,7 @@ img, div {
 
 body {
     font-family: "微软雅黑", Hei;
-    font-size: 1em;
+    font-size: 15px;
     font-style: normal;
     color: #CCC;
     min-height: 100%;
@@ -314,9 +314,9 @@ a:hover {
     border-bottom: 2px solid #58c7ee;
 }
 
-#title .title_hover {
-    /*background: red;*/
+#title a:hover{
     background-image: linear-gradient(to right, rgba(88, 199, 238, 0), rgba(255, 0, 0, 0.5), rgba(88, 199, 238, 0));
+
 }
 
 #prompt {
@@ -440,7 +440,7 @@ a:hover {
 }
 
 .sticky .comments {
-
+    clear: none;
 }
 
 .sticky #comments_inline .comments-title {
@@ -604,6 +604,45 @@ a:hover {
 .blocks-gallery-item__caption{
     font-size: 0.7em;
     line-height: 100%;
+}
+
+.wp-block-gallery{
+    clear: both;
+}
+
+.blocks-gallery-grid{
+    clear: both;
+}
+
+.wp-block-code{
+    position: relative;
+    white-space: pre-wrap;/*代码段自动换行*/
+    word-wrap: break-word;
+    word-break: break-word;
+    padding: 5px 0px 5px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #58c7ee;
+}
+
+.wp-block-code code{
+    font-family: Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.code_list_num{
+    position: absolute;
+    font-family: Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    list-style: none;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-right: 5px;
+    width: 18px;
+    border-right: 1px solid #58c7ee;
+    text-align: right;
 }
 
 .single_postwords {
@@ -874,6 +913,7 @@ figure {
     border-top: 2px solid #CCC;
     border-bottom: 2px solid #CCC;
     padding: 8px;
+    clear: both;
 }
 
 .comments p {
@@ -1078,6 +1118,11 @@ figure {
     padding: 5px;
     margin-top: 15px;
     padding-top: 35px;
+}
+
+#owner a{
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #sidebar #weibo_li {

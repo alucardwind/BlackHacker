@@ -23,6 +23,7 @@ function runEffectout() {
 				if(ia === ptbder.length){
 					var img_fix_auto = new img_fix();
 					let m_img_fix_auto = new m_img_fix();
+					fix_code();
 					var sideber_li_ul = document.querySelectorAll('#sidebar li ul');
 					for(let ii=0; ii<sideber_li_ul.length; ii++){
 						$(sideber_li_ul[ii]).toggle("slide",{direction: "up"},600,function(){
@@ -107,10 +108,6 @@ function light() {
 		chuandi_light(tit_li[j]);		
 	}
 	t1 = setTimeout(light, 2500);
-}
-
-function title_hover(select){
-	$(select).toggleClass("title_hover",500);
 }
 
 function m_img_fix(){
@@ -1385,4 +1382,25 @@ function change_content(src,imgwidth,imgheight) {
 
 	xmlhttp.open("GET", "https://www.redonleft.com/wp-content/themes/blackhack/ajax/ajax_show_img.php?img_src="+src+"&imgwidth="+imgwidth+"&imgheight="+imgheight, true);
 	xmlhttp.send();
+}
+
+function fix_code(){
+	let block_code_array = document.querySelectorAll(".wp-block-code");
+	if( block_code_array == null){
+		return;
+	}
+	for(let i = 0; i < block_code_array.length; i++){
+		let code = block_code_array[i].querySelector("code");
+		let code_height = code.offsetHeight;
+		let enter_num = code_height / 14;//默认字体大小为15px，code字体为0.8em，行高1.2em，所以单行高为14.4px，四舍五入为14
+		let ul_node = document.createElement("UL")//创建ul node
+		ul_node.setAttribute("class","code_list_num");//设置ul的class名称
+		for(let ii = 1; ii <= enter_num; ii++){
+			let li_node = document.createElement("LI");
+			let li_node_text = document.createTextNode(ii);//创建li内容
+			li_node.appendChild(li_node_text);//将li内容填入li标签内
+			ul_node.appendChild(li_node);//将li填入ul内
+		}
+		block_code_array[i].appendChild(ul_node);//将ul填入选中的wp-block-code内
+	}
 }

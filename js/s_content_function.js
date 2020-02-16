@@ -12,6 +12,7 @@ window.onload = function () {
 	postwords_right_single();
 	datei_left_single();
 	datei_bottom_single();
+	fix_code();
 	if(sidebar_fix_bool){
 		sidebar_fix();
 	}

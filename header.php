@@ -51,12 +51,6 @@ require 'vendor/autoload.php'
                 var runin = new runEffectin();
             });
 
-            var title_a = document.querySelectorAll('#title a');
-            for (let auto_i = 0; auto_i < title_a.length; auto_i++) {
-                $(title_a[auto_i]).hover(function () {
-                    title_hover(title_a[auto_i]);
-                });
-            }
         });
     </script>
 </head>
