@@ -18,4 +18,34 @@ window.onload = function () {
 	}
 	sidebar_fix_h2();
 	col3_sidebar_action();
+	var page_width = document.querySelector("body").offsetWidth;
+	fit_screen(page_width);
+	if (yes == 1) {
+		var page = document.querySelector("#page");
+		$(page).css("width", "1340px");
+		var mask_main = document.querySelector(".mask-main");
+		$(mask_main).css("width", "1340px");
+		var mask_left = document.querySelector(".mask-left");
+		$(mask_left).css("width", "1340px");
+		var col1 = document.querySelector(".col1");
+		$(col1).css("width", "1070px");
+		let post = document.querySelector(".post");
+		if(post != null){
+			$(post).css("width", "1070px");
+			$(post).css("margin", "0 auto");
+		}
+		let page_class = document.querySelector(".page");
+		if(page_class != null){
+			$(page_class).css("width", "1070px");
+			$(page_class).css("margin", "0 auto");
+		}
+		let iframe = document.querySelectorAll("iframe");
+		if(iframe != null){
+			for(let i = 0; i < iframe.length; i++){
+				$(iframe).css("width","885px");
+			}
+		}
+	}
+	need_cookie(page_width);
+
 };

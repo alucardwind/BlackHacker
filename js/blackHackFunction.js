@@ -1288,7 +1288,7 @@ function fit_screen(page_width) {
 	}
 }
 
-function need_cookie() {
+function need_cookie(page_width) {
 	let check_name = "page_width=";
 	let co_array = document.cookie.split(';');
 	let check_same = false;

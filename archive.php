@@ -20,7 +20,7 @@
                         var col1 = document.querySelector(".col1");
                         $(col1).css("width", "1574px");
                     }
-                    need_cookie();
+                    need_cookie(page_width);
                 </script>
                 <div id="fitchrome">
                     <div id="button-border">
