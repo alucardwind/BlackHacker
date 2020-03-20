@@ -30,7 +30,13 @@
     $can_hits = floor($time_now/960);//微博API规定每天获取次数上限为100，为防止异常情况，我将上限设定为90次。即每960秒可增加一次获取次数。这里计算出到现在时刻，一共可以获取多少次
     $temp_hits = $json_read['already_hits']+1;//从json中获取已经获取的次数，加上本次运行的一次
     $can_hits_real = $can_hits - $temp_hits;//前两者相减获得实际剩余的获取次数
-    $ip_width = $temp_hits / $can_hits * 121;//这里为下面的table中的div背景计算长度，为模拟进度条。这个进度条为表示已经请求的次数和允许请求的次数比值
+    if($can_hits == 0){
+        $can_hits_real = 0;
+        $ip_width = 0;
+    }
+    else{
+        $ip_width = $temp_hits / $can_hits * 121;//这里为下面的table中的div背景计算长度，为模拟进度条。这个进度条为表示已经请求的次数和允许请求的次数比值
+    }
     $user_width = ($time_now/960 - $can_hits)*121;//这个进度条为表示离请求次数增加还剩多久
     $percent_float = ($time_now/960 - $can_hits) * floatval(100);//以百分数展示还剩多久
     $percent = round($percent_float,0)."%";//以百分数展示还剩多久

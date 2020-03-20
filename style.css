@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:Black Hack
-Version: 2.4.0
+Version: 2.4.2
 Author:左半红印
 Description:黑色简洁主题
 Author URI:https://www.redonleft.com/
@@ -392,7 +392,7 @@ a:hover {
     float: right;
     padding-right: 0;
     padding-left: 0;
-    padding-bottom: 5px;
+    padding-bottom: 9px;
     margin-top: 10px;
     margin-left: 0;
     background: 0;
@@ -465,6 +465,7 @@ a:hover {
     border-left: 2px #58c7ee solid;
     border-right: 2px #58c7ee solid;
     border-bottom: 0;
+    height: 70px;
 }
 
 .sticky #comment_right {
@@ -556,6 +557,7 @@ a:hover {
 .postwords img {
     padding: 5px;
     margin: 5px;
+    margin-bottom: 0;
     border-top: 1px #fff solid;
 }
 
@@ -566,7 +568,9 @@ a:hover {
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
-
+    line-height: 0.8em;
+    font-size: 0.8em;
+    padding-bottom: 6px;
 }
 
 .postwords blockquote {
@@ -588,6 +592,12 @@ a:hover {
 
 .postwords ol {
     margin-left: 2em;
+}
+
+.postwords iframe{
+    width: 445px;
+    border-right: 1px solid #58c7ee;
+    border-left: 1px solid #58c7ee;
 }
 
 .blocks-gallery-item{

@@ -21,6 +21,7 @@ require 'vendor/autoload.php'
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
     <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/blackHackFunction.js"></script>
+    <link rel="icon" href="<?php bloginfo('template_url'); ?>/images/logo_120.png" sizes="32x32">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/mobile.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ajax.css" type="text/css" media="screen"/>
