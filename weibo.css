@@ -1,1 +1,86 @@
-/*no use now*/
+#weibo {
+    padding-top: 10px;
+    clear: both;
+}
+
+#weibo table {
+    margin-bottom: 20px;
+}
+
+#weibo table td {
+    border: 1px #58c7ee solid;
+    width: 121px;
+    text-align: center;
+}
+
+#touch_limit {
+
+}
+
+#touch_limit tr td {
+    text-align: center;
+    border-color: red;
+    color: red;
+}
+
+#weibo .weibo_line {
+    margin-top: 10px;
+    text-align: left;
+    border-bottom: 1px #58c7ee solid;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5),rgba(0,0,0,0));
+    padding-bottom: 24px;
+}
+
+.weibo_text{
+    padding: 5%
+}
+
+.weibo_line img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 1px solid;
+}
+
+.weibo_yinyong {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border-top: 1px #58c7ee solid;
+    border-left: 1px #58c7ee solid;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+#re_ip_hit {
+    color: #000;
+    background: linear-gradient(to right, rgba(88, 199, 238, 1), rgba(88, 199, 238, 0.2));
+}
+
+#re_user_hit {
+    color: #000;
+    background: linear-gradient(to right, rgba(88, 199, 238, 1), rgba(88, 199, 238, 0.2));
+}
+
+#re_ip_hit_red {
+    color: #000;
+    background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0.2));
+}
+
+#re_user_hit_red {
+    color: #000;
+    background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0.2));
+}
+
+.weibo_user {
+    text-align: right;
+    background-color: rgba(88, 199, 238, 0.2);
+    float: right;
+    padding: 2px 5px 2px 10px;
+}
+
+.weibo_user_left{
+    height: 24px;
+    width: 40px;
+    float: right;
+}

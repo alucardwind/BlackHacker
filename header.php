@@ -2,6 +2,7 @@
 session_start();
 require 'vendor/autoload.php'
 ?>
+
 <html>
 <head>
     <title>
@@ -25,6 +26,7 @@ require 'vendor/autoload.php'
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/mobile.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ajax.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/weibo.css" type="text/css" media="screen"/>
     <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

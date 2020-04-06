@@ -94,8 +94,10 @@
                     echo "<img src='" . $weibo_pic[ 'thumbnail_pic' ] . "' />";
                 }
             }*/
-            echo "<br /><p class='weibo_user'>by：" . $item[ 'user' ][ 'screen_name' ] . "</p>";
-            echo "<br /></div>";
+
+            echo "<div class='weibo_user'><i class='fab fa-weibo'></i> " . $item[ 'user' ][ 'screen_name' ] . "</div>";
+            echo "<canvas class='weibo_user_left' width='80' height ='48'></canvas>";
+            echo "</div>";
         }
     }
     if ( $ms[ 'error' ] ) {

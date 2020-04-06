@@ -4,4 +4,6 @@ window.onload = function () {
 	mobile_sidebar_up();
 	mobile_sidebar_down();
 	col3_sidebar_action();
+	weibo_user_left();
+
 };
