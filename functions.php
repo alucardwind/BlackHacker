@@ -6,6 +6,16 @@ if (function_exists('register_sidebar'))
         'id' => 'sidebar-1'
     ));
 
+/**
+ * Add a sidebar.
+ */
+function blackhack_theme_slug_widgets_init() {
+    register_sidebar( array(
+        'id'            => 'sidebar-1'
+    ) );
+}
+add_action( 'widgets_init', 'blackhack_theme_slug_widgets_init' );
+
 function get_content( $name = null ) {
     $templates = array();
     $name      = (string) $name;
@@ -24,5 +34,11 @@ function get_weibo( $name = null ) {
     }
     $templates[] = 'weibo.php';
     locate_template( $templates, true, false);
+}
+
+add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+function theme_slug_setup() {
+    add_theme_support( 'title-tag' );
 }
 ?>

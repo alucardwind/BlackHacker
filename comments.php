@@ -47,12 +47,12 @@ if ( post_password_required() ) {
 <?php else : ?>	
 	
 		<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-		<label for="author">&nbsp;称呼 *ID<?php if ($req) _e(' (必填内容)'); ?>
+		<label for="author">&nbsp;称呼 *ID<?php if ($req) _e(' (必填内容)','blackhack'); ?>
 		</label></p>
 				
 		<p>
 		<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" size="22" />
-		<label for="email">&nbsp;邮箱 *E-mail<?php if ($req) _e(' (必填内容，但我不会泄露给他人)'); ?>
+		<label for="email">&nbsp;邮箱 *E-mail<?php if ($req) _e(' (必填内容，但我不会泄露给他人)','blackhack'); ?>
 		</label></p>		
 		
 		<p>

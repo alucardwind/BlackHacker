@@ -2,23 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php
-	global $page, $paged;
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s'), max( $paged, $page ) );
-	?>
-</title>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" type="text/css" media="screen" />
 <script>
 	window.onload = function(){
 		setTimeout(function(){window.location.href="https://www.redonleft.com";},10000);
 	};
 </script>
+    <?php wp_head(); ?>
 </head>
 <body >
 <!-- page wrap -->

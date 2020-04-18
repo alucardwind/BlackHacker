@@ -30,12 +30,12 @@ if ( post_password_required() ) {
 <?php else : ?>	
 	
 		<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="15" tabindex="1" />
-		<label for="author">&nbsp;*ID<?php if ($req) _e(''); ?>
+		<label for="author">&nbsp;*ID<?php if ($req) _e('','blackhack'); ?>
 		</label></p>
 				
 		<p>
 		<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" size="15" />
-		<label for="email">&nbsp;*E-mail<?php if ($req) _e(''); ?>
+		<label for="email">&nbsp;*E-mail<?php if ($req) _e('','blackhack'); ?>
 		</label></p>		
 		
 		<p>

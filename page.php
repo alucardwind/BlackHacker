@@ -46,7 +46,7 @@
                                         <canvas id="title_left_single" height="94" width="100"></canvas>
                                         <canvas id="date1_right_single" height="64" width="260"></canvas>
                                         <div id="date1_single">
-                                            <?php the_category(' ') ?><?php comments_popup_link(__('没有评论'), __('包含1个评论'), __('包含% 个评论'), '', __('不允许评论')); ?><?php edit_post_link(__('编辑'), ''); ?>
+                                            <?php the_category(' ') ?><?php comments_popup_link(__('没有评论','blackhack'), __('包含1个评论','blackhack'), __('包含% 个评论','blackhack'), '', __('不允许评论','blackhack')); ?><?php edit_post_link(__('编辑','blackhack'), ''); ?>
                                         </div>
                                         <canvas id="date1_left_single" height="64" width="1163"></canvas>
                                     </div>

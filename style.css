@@ -1,14 +1,19 @@
 @charset "utf-8";
 
 /* 
-Theme Name:Black Hack
-Version: 2.4.4
-Author:左半红印
-Description:黑色简洁主题
+Theme Name:BlackHack
+Version: 2.4.5
+Author:killgod
 Author URI:https://www.redonleft.com/
-Tags: redonleft, black, hack
-Date: 07/05/2013
-Update: 12/26/2019
+Theme URI: https://github.com/alucardwind/blackhack
+Tags: blog
+Description: The BlackHack theme for WordPress is only for the author use.一个弑神/左半红印博客专用主题。
+License: GNU General Public License v3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: blackhack
+
+You can use this theme for free, have fun!
+
 (c) redonleft.com All Rights Reserved.
 */
 
@@ -1112,7 +1117,8 @@ figure {
     border-radius: 5px;
 }
 
-.avatar_container {
+#sidebar .avatar_container {
+    float: none;
     display: none;
     clear: both;
     text-align: center;

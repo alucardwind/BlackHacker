@@ -7,7 +7,7 @@
         <canvas class="title_left" height="88" width="98"></canvas>
         <canvas class="date1_right" height="46" width="200"></canvas>
         <div id="date1">
-            <?php the_category(' ');?><?php edit_post_link(__('编辑'),''); ?><div id="zhiding"><b>置顶</b></div>
+            <?php the_category(' ');?><?php edit_post_link(__('编辑','blackhack'),''); ?><div id="zhiding"><b>置顶</b></div>
         </div>
         <canvas class="date1_left" height="46" width="124"></canvas>
     </div>
