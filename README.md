@@ -24,7 +24,8 @@ https://github.com/FortAwesome/Font-Awesome<br>
 <br>
 主题样式表中已经包含了以下wordpress插件的样式设定<br>请自行下载这些插件<br>
 <b>Prime Strategy Page Navi<br>
-Sidebar Login<br>
+        <s>Sidebar Login</s>因太久不更新已经不适应现在的版本<br>
+        Login With Ajax<br>
         WP User Avatar</b><br>
         <br>
 <b>在使用本主题时请注意：</b><br>
