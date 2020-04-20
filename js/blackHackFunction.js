@@ -1442,3 +1442,20 @@ function weibo_user_left(){
 		dat_tx.stroke();
 	}
 }
+
+function title_hover() {
+	let title_button = document.querySelectorAll(".title_content");
+	if(title_button.length == 0){
+		return;
+	}
+	for(let i =0; i < title_button.length; i++){
+		$(title_button[i]).mouseenter(function () {
+			let title_b = this.querySelector('.title_background');
+			$(title_b).toggle("fade",500);
+		})
+		$(title_button[i]).mouseleave(function () {
+			let title_b = this.querySelector('.title_background');
+			$(title_b).toggle("fade",500);
+		})
+	}
+}

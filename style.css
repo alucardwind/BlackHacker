@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.5
+Version: 2.4.6
 Author:killgod
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -303,7 +303,7 @@ a:hover {
     padding: 0px;
 }
 
-#title a {
+.title_content{
     float: right;
     margin: 0;
     background: rgba(88, 199, 238, 0.2);
@@ -316,9 +316,18 @@ a:hover {
     border-bottom: 2px solid #58c7ee;
 }
 
-#title a:hover{
-    background-image: linear-gradient(to right, rgba(88, 199, 238, 0), rgba(255, 0, 0, 0.5), rgba(88, 199, 238, 0));
+#title a {
+    z-index: 10;
+    position: relative;
+}
 
+.title_background{
+    background-image: linear-gradient(to right, rgba(88, 199, 238, 0), rgba(255, 0, 0, 0.5), rgba(88, 199, 238, 0));
+    height: 40px;
+    z-index: 0;
+    position: relative;
+    top: -40px;
+    display: none;
 }
 
 #prompt {
@@ -740,16 +749,18 @@ figure {
     float: right;
     width: 60%;
     border-bottom: 2px #58c7ee solid;
+    height: 23px;
 }
 
 #date1 a {
     height: 19px;
-    line-height: 19px;
+    line-height: 23px;
     padding: 2px 10px 2px 10px;
     margin: 0;
     background: 0;
     width: 21%;
     border: 0;
+    position: inherit;
 }
 
 #date1_single {
@@ -1077,52 +1088,7 @@ figure {
     width: 60%;
 }
 
-#loginform {
-    clear: both;
-    margin-top: 3px;
-    padding-left: 5px;
-    padding-top: 5px;
-}
 
-#loginform p {
-    margin-top: 8px;
-}
-
-#user_login {
-    width: 50%;
-    margin-left: 25%;
-    color: #fff;
-    background: 0;
-    border: 1px #58c7ee solid;
-    border-radius: 5px;
-    background-color: rgba(88, 199, 238, 0.2);
-}
-
-#user_pass {
-    width: 50%;
-    margin-left: 25%;
-    color: #fff;
-    background: 0;
-    border: 1px #58c7ee solid;
-    border-radius: 5px;
-    background-color: rgba(88, 199, 238, 0.2);
-}
-
-#wp-submit {
-    width: 33%;
-    margin-left: 33%;
-    background: 0;
-    color: #58c7ee;
-    border: 1px #58c7ee solid;
-    border-radius: 5px;
-}
-
-#sidebar .avatar_container {
-    float: none;
-    display: none;
-    clear: both;
-    text-align: center;
-}
 
 #owner {
     text-align: center;

@@ -3,7 +3,7 @@
 	<?php if ( !function_exists('dynamic_sidebar')
 	|| !dynamic_sidebar() ) : ?>	
 	<?php endif; ?>
-	<br clear="all"/><!--下面的块clear both无法生效，故增加前面的语句 -->
+	<!--下面的块clear both无法生效，故增加前面的语句 -->
 		<li id="aplayer_li"><h2 class="widgettitle">音乐播放器控制</h2></li>
 		<div id="aplayer" class="toggle_display">
 			播放器位于屏幕左下角<br />默认网易云音乐<br />可通过提交歌单ID变更播放列表

@@ -17,6 +17,7 @@ require 'vendor/autoload.php'
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/mobile.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/ajax.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/weibo.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/LWA_plugin_style.css" type="text/css" media="screen"/>
     <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -43,6 +44,8 @@ require 'vendor/autoload.php'
             $("#button-in").click(function () {
                 var runin = new runEffectin();
             });
+
+            title_hover();
 
         });
     </script>
