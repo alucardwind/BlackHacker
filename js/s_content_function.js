@@ -1,5 +1,7 @@
 window.onload = function () {
 	img_fix();
+    $('#load_mask').remove();
+    single_page_fix_size();
 	nav_menu_left();
 	button_out_left();
 	button_out_right();
@@ -8,8 +10,7 @@ window.onload = function () {
 	title_left_single();
 	date1_left_single();
 	date1_right_single();
-	postwords_left_single();
-	postwords_right_single();
+
 	datei_left_single();
 	datei_bottom_single();
 	fix_code();
@@ -39,13 +40,8 @@ window.onload = function () {
 			$(page_class).css("width", "1070px");
 			$(page_class).css("margin", "0 auto");
 		}
-		let iframe = document.querySelectorAll("iframe");
-		if(iframe != null){
-			for(let i = 0; i < iframe.length; i++){
-				$(iframe).css("width","885px");
-			}
-		}
 	}
-	need_cookie(page_width);
-
+    need_cookie(page_width);
+    postwords_left_single();
+	postwords_right_single();
 };

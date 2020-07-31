@@ -41,13 +41,13 @@
                                 </div>
 
                                 <div class="postborder">
-                                    <canvas id="postwords_left_single" width="117"></canvas>
+                                    <canvas id="postwords_left_single" width="57"></canvas>
                                     <div class="postwords single_postwords">
                                         <?php the_content('...点这里浏览全文 »'); ?>
                                         <!-- 为日志中图片撑出足够高度 -->
                                         <?php comments_template('', true); ?>
                                     </div>
-                                    <canvas id="postwords_right_single" width="176"></canvas>
+                                    <canvas id="postwords_right_single" width="88"></canvas>
                                 </div>
                                 <script>
 

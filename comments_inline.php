@@ -11,6 +11,7 @@ if ( post_password_required() ) {
 <?php if (comments_open()) : ?>
 
 	<div class="comments-title"><h3 id="respond">&nbsp;想说点什么吗？</h3>
+        <br>
 &nbsp;(若评论发表后未显示请耐心等待审核)</div>
  
 	

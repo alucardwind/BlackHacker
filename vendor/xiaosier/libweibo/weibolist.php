@@ -19,7 +19,7 @@ $user_message = $c->show_user_by_id( $uid);//根据ID获取用户等基本信息
 </head>
 
 <body>
-	<?=$user_message['screen_name']?>,您好！ 
+	<?php echo $user_message['screen_name']?>,您好！
 	<h2 align="left">发送新微博</h2>
 	<form action="" >
 		<input type="text" name="text" style="width:300px" />
@@ -40,7 +40,7 @@ if( isset($_REQUEST['text']) ) {
 <?php if( is_array( $ms['statuses'] ) ): ?>
 <?php foreach( $ms['statuses'] as $item ): ?>
 <div style="padding:10px;margin:5px;border:1px solid #ccc">
-	<?=$item['text'];?>
+	<?php echo $item['text'];?>
 </div>
 <?php endforeach; ?>
 <?php endif; ?>

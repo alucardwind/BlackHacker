@@ -32,7 +32,8 @@
 }
 
 .weibo_text{
-    padding: 5%
+    padding: 5%;
+    overflow: hidden;
 }
 
 .weibo_line img {

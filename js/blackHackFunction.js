@@ -239,12 +239,12 @@ function nav_menu_left(){
 	var nav_tx = nav_menu_left.getContext("2d");
 	nav_tx.scale(2,2);
 	nav_tx.beginPath();
-	nav_tx.moveTo(100,30);
-	nav_tx.lineTo(0,30);
-	nav_tx.lineTo(30,0);
-	nav_tx.lineTo(100,0);
+	nav_tx.moveTo(100,29);
+	nav_tx.lineTo(0,29);
+	nav_tx.lineTo(30,1);
+	nav_tx.lineTo(100,1);
 	nav_tx.strokeStyle = "#58c7ee";
-	nav_tx.lineWidth = 3;
+	nav_tx.lineWidth = 2;
 	nav_tx.stroke();
 	nav_tx.closePath();
 	nav_tx.fillStyle = "#58c7ee";
@@ -266,11 +266,11 @@ function button_out_left(){
 	var button_tx = button_out_left.getContext("2d");
 	button_tx.scale(2,2);
 	button_tx.beginPath();
-	button_tx.moveTo(0,0);
-	button_tx.lineTo(75,0);
+	button_tx.moveTo(0,1);
+	button_tx.lineTo(75,1);
 	button_tx.moveTo(75,60);
 	button_tx.lineTo(0,29);
-	button_tx.lineWidth = 3;
+	button_tx.lineWidth = 2;
 	button_tx.strokeStyle = "#58c7ee";
 	button_tx.stroke();
 	button_tx.closePath();
@@ -285,8 +285,8 @@ function button_out_left(){
 	button_tx.fill();
 	button_tx.beginPath();
 	button_tx.moveTo(75,40);
-	button_tx.lineTo(40,23);
-	button_tx.lineTo(0,23);
+	button_tx.lineTo(40,24);
+	button_tx.lineTo(0,24);
 	button_tx.lineWidth = 1;
 	button_tx.strokeStyle = "#58c7ee";
 	button_tx.globalAlpha = 1;
@@ -310,13 +310,13 @@ function button_out_right(){
 	button_tx.globalAlpha = 0.2;
 	button_tx.fill();
 	button_tx.beginPath();
-	button_tx.moveTo(0,0);
-	button_tx.lineTo(32,0);
-	button_tx.lineTo(50,20);
-	button_tx.lineTo(50,39);
+	button_tx.moveTo(0,1);
+	button_tx.lineTo(32,1);
+	button_tx.lineTo(49,20);
+	button_tx.lineTo(49,39);
 	button_tx.lineTo(25,39);
 	button_tx.lineTo(0,60);
-	button_tx.lineWidth = 3;
+	button_tx.lineWidth = 2;
 	button_tx.strokeStyle = "#58c7ee";
 	button_tx.globalAlpha = 1;
 	button_tx.stroke();
@@ -850,20 +850,20 @@ function date1_right_single(){
 }
 
 function postwords_left_single(){
-	var pw = document.getElementsByClassName("single_postwords");
-	if(pw.length === 0){return;}
-	var hei_pw = pw[0].offsetHeight;
-	var postwords_left_single = document.getElementById("postwords_left_single");
-	postwords_left_single.height = hei_pw * 2;
-	$("#postwords_left_single").css("height",hei_pw);
-	var pos_tx = postwords_left_single.getContext("2d");
+	let pw = $(".single_postwords");
+	if(pw == null){return;}
+    let hei_pw = pw.outerHeight();
+    document.getElementById("postwords_left_single").height = hei_pw;
+    $("#postwords_left_single").css("height",hei_pw);
+	let pos_tx = document.getElementById("postwords_left_single").getContext("2d");
 	pos_tx.beginPath();
-	pos_tx.scale(2,2);
+	//pos_tx.scale(2,2);
 	pos_tx.moveTo(27,0);
 	pos_tx.lineTo(27,hei_pw);
 	pos_tx.lineWidth = 1;
 	pos_tx.strokeStyle = "#58c7ee";
-	pos_tx.stroke();
+    pos_tx.stroke();
+    if(hei_pw<85){return;}
 	pos_tx.beginPath();
 	pos_tx.moveTo(27,hei_pw);
 	pos_tx.lineTo(27,hei_pw-15);
@@ -871,10 +871,10 @@ function postwords_left_single(){
 	pos_tx.lineTo(27,hei_pw-50);
 	pos_tx.moveTo(27,hei_pw-70);
 	pos_tx.lineTo(27,hei_pw-85);
-	if(hei_pw<85){return;}
 	pos_tx.lineWidth = 3;
 	pos_tx.strokeStyle = "#ffffff";
-	pos_tx.stroke();
+    pos_tx.stroke();
+    if(hei_pw<145){return;}
 	pos_tx.beginPath();
 	pos_tx.moveTo(27,60);
 	pos_tx.lineTo(27,75);
@@ -882,38 +882,43 @@ function postwords_left_single(){
 	pos_tx.lineTo(27,110);
 	pos_tx.moveTo(27,130);
 	pos_tx.lineTo(27,145);
-	if(hei_pw<145){return;}
-	pos_tx.stroke();
+    pos_tx.stroke();
+    if(hei_pw<270){return;}
 	pos_tx.beginPath();
 	pos_tx.moveTo(27,185);
 	pos_tx.lineTo(27,200);
 	pos_tx.moveTo(27,220);
 	pos_tx.lineTo(27,235);
 	pos_tx.moveTo(27,255);
-	pos_tx.lineTo(27,270);
-	if(hei_pw<270){return;}
-	pos_tx.stroke();
+    pos_tx.lineTo(27,270);
+    pos_tx.stroke();
 }
-
+ 
 function postwords_right_single(){
-	var pw = document.getElementsByClassName("single_postwords");
-	if(pw.length === 0){return;}
-	var hei_pw = pw[0].offsetHeight;
-	var postwords_right_single = document.getElementById("postwords_right_single");
-	postwords_right_single.height = hei_pw * 2;
-	$("#postwords_right_single").css("height",hei_pw);
-	var pos_tx = postwords_right_single.getContext("2d");
-	pos_tx.beginPath();
-	pos_tx.scale(2,2);
+	let pw = $(".single_postwords");
+	if(pw == null){return;}
+    let hei_pw = pw.outerHeight();
+	document.getElementById("postwords_right_single").height = hei_pw;
+    $("#postwords_right_single").css("height",hei_pw);
+	let pos_tx = document.getElementById("postwords_right_single").getContext("2d");
+    pos_tx.beginPath();
+    if(hei_pw<120){
+        pos_tx.moveTo(40,hei_pw);
+        pos_tx.lineTo(40,0);
+        pos_tx.lineWidth = 1;
+        pos_tx.strokeStyle = "#58c7ee";
+	    pos_tx.stroke();
+        return;
+    }
 	pos_tx.moveTo(32,hei_pw-120);
 	pos_tx.lineTo(32,hei_pw-100);
 	pos_tx.lineTo(47,hei_pw-100);
 	pos_tx.lineTo(47,hei_pw-120);
-	if(hei_pw<120){return;}
 	pos_tx.closePath();
 	pos_tx.lineWidth = 3;
 	pos_tx.strokeStyle = "#58c7ee";
-	pos_tx.stroke();
+    pos_tx.stroke();
+    if(hei_pw<218){return;}
 	pos_tx.beginPath();
 	pos_tx.moveTo(40,hei_pw-120);
 	pos_tx.lineTo(40,0);
@@ -942,7 +947,6 @@ function postwords_right_single(){
 	pos_tx.lineTo(70,218);
 	pos_tx.lineTo(62,210);
 	pos_tx.lineTo(70,202);
-	if(hei_pw<218){return;}
 	pos_tx.moveTo(70,hei_pw-40);
 	pos_tx.lineTo(70,hei_pw-90);
 	pos_tx.stroke();
@@ -1458,4 +1462,36 @@ function title_hover() {
 			$(title_b).toggle("fade",500);
 		})
 	}
+}
+
+function single_page_fix_size(){
+	let post = $(".single_postwords");
+	if(post == null){return;}
+	let post_width = post.width();
+	let iframe_array = document.querySelectorAll("iframe");
+	if(iframe_array == null){return;}
+	for(let i = 0;i < iframe_array.length; i++){
+		$(iframe_array[i]).width(post_width);
+    }
+    let post_height = post.outerHeight();
+    $('.postborder').height(post_height);
+}
+
+function load_time(){
+	let load_div = document.createElement("div");
+	load_div.innerHTML = "正在加载中……";
+	load_div.style.color = "white";
+	load_div.style.fontSize = "5em";
+	load_div.style.fontWeight = "bold";
+	load_div.id = 'load_mask';
+	load_div.style.position = 'absolute';
+	load_div.style.zIndex = '13';
+	load_div.style.backgroundColor = 'rgb(0,0,0,0.8)';
+	load_div.style.textAlign = 'center';
+	let pw_width = $(".single_postwords").width();
+	let pw_height = $(".single_postwords").height();
+	load_div.style.width = pw_width;
+	load_div.style.height = '100%';
+	load_div.style.lineHeight = pw_height+"px";
+	$(".single_postwords").prepend(load_div);
 }

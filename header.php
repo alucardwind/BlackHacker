@@ -60,7 +60,7 @@ require 'vendor/autoload.php'
             <div id="logoleft">
                 <canvas class="logo_left titlel" width="280" height="200"></canvas>
                 <div id="displayl">
-                    <div id="name">
+                    <div class="name">
                         <a href="<?php echo esc_url(home_url('/')); ?>"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
                            rel="home"><?php bloginfo('name'); ?></a>
@@ -74,7 +74,7 @@ require 'vendor/autoload.php'
             <div id="logoright">
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">
-                    <div id="name">
+                    <div class="name">
                         <a href="<?php echo esc_url(home_url('/')); ?>"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
                            rel="home"><?php bloginfo('name'); ?></a>

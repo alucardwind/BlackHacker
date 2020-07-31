@@ -5,7 +5,12 @@
         <div class="mask-left">
             <div id="show_large_image"></div>
             <!-- first column -->
-            <?php include 'sidebar_mobile.php'; ?>
+            <?php
+            $col3_yes = $_COOKIE["width_thin_bool"];
+            if($col3_yes == 1){
+                include 'sidebar_mobile.php';
+            }
+            ?>
             <div id="col1" class="col1">
                 <script type='text/javascript'>
                     var page_width = document.querySelector("body").offsetWidth;
@@ -51,9 +56,9 @@
                             $bili_av = get_option('bilibili_num');
                         }
                         $change_av = "<form action='index.php' method='get'>
-							<input type='number' name='bili_av' value='" . $bili_av . "' />
-							<input type='submit' value='提交AV号' /><br />
-							这里所展示的是我近期很喜欢的B站视频，可以通过提交AV号变更视频
+							<input type='text' name='bili_av' value='" . $bili_av . "' />
+							<input type='submit' value='提交BV号' /><br />
+							这里所展示的是我近期很喜欢的B站视频，可以通过提交BV号变更视频
 							</form></div>";
                         $num++;
                         if (is_sticky()) {

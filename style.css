@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.6
+Version: 2.4.8
 Author:killgod
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -22,6 +22,8 @@ You can use this theme for free, have fun!
 * {
     margin: 0;
     padding: 0;
+    font-size: 15px;
+    font-family: Microsoft YaHei,DejaVu Sans Mono,Ubuntu Mono,Droid Sans Mono;
 }
 
 /*** COMMON ELEMENTS ***/
@@ -186,8 +188,8 @@ a:hover {
     display: block;
 }
 
-#name {
-    font-size: 48px;
+.name a{
+    font-size: 3em;
     line-height: 53px;
 }
 
@@ -221,15 +223,15 @@ a:hover {
 
 #button-out {
     background: url(images/button.png) repeat-x;
-    font-size: 24px;
-    padding-right: 40px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-top: 7px;
+    padding: 7px 25px 0 25px;
     float: right;
     height: 53px;
     border-right: 2px solid #58c7ee;
     border-left: 2px solid #58c7ee;
+}
+
+#button-out a{
+    font-size: 24px;
 }
 
 #button_out_right {
@@ -250,12 +252,13 @@ a:hover {
     display: none;
     background: url(images/button.png) repeat-x;
     font-size: 24px;
-    padding-right: 40px;
-    padding-bottom: 0;
-    padding-left: 10px;
-    padding-top: 7px;
+    padding: 7px 25px 0 25px;
     float: right;
     height: 53px;
+}
+
+#button-in a{
+    font-size: 24px;
 }
 
 #fitchrome {
@@ -295,7 +298,6 @@ a:hover {
 }
 
 #title {
-    font-size: 1.2em;
     margin-top: 60px;
     margin-bottom: 0px;
     height: 69px;
@@ -319,6 +321,7 @@ a:hover {
 #title a {
     z-index: 10;
     position: relative;
+    font-size: 1.1em;
 }
 
 .title_background{
@@ -396,18 +399,16 @@ a:hover {
 }
 
 .sticky .postwords {
-    width: 495px;
+    width: 487px;
     border-top: 0;
     border-bottom: 2px solid #58c7ee;
     margin-bottom: 0px;
     float: right;
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 9px;
+    padding: 8px 4px 11px 4px;
     margin-top: 10px;
     margin-left: 0;
     background: 0;
-    line-height: 138%;
+    line-height: 20px;
 }
 
 .sticky .postwords p {
@@ -515,10 +516,6 @@ a:hover {
     box-shadow: 0px 0px 4px #58c7ee;
 }
 
-#postborder {
-
-}
-
 .ptbder {
     display: none;
 }
@@ -590,6 +587,7 @@ a:hover {
     margin: 5px;
     border-top: 1px #fff solid;
     border-left: 1px #fff dashed;
+    overflow: hidden;
 }
 
 .postwords strong {
@@ -607,7 +605,7 @@ a:hover {
 }
 
 .postwords iframe{
-    width: 445px;
+    /*width: 445px;*/
     border-right: 1px solid #58c7ee;
     border-left: 1px solid #58c7ee;
 }
@@ -654,9 +652,6 @@ a:hover {
 
 .code_list_num{
     position: absolute;
-    font-family: Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;
-    font-size: 0.8em;
-    line-height: 1.2em;
     list-style: none;
     top: 0;
     left: 0;
@@ -664,7 +659,21 @@ a:hover {
     padding-right: 5px;
     width: 18px;
     border-right: 1px solid #58c7ee;
+}
+
+.code_list_num li{
+    font-family: Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;
+    font-size: 0.8em;
+    line-height: 1.2em;
     text-align: right;
+}
+
+.wp-block-table table{
+    border-collapse: collapse;
+}
+
+.wp-block-table td{
+    border: 1px solid #58c7ee;
 }
 
 .single_postwords {
@@ -692,7 +701,7 @@ a:hover {
     font-size: 15px;
     margin-top: 60px;
     margin-bottom: 0px;
-    height: 69px;
+    height: 79px;
     width: 1032px;
     padding: 0px;
 }
@@ -743,7 +752,6 @@ figure {
 }
 
 #date1 {
-    font-size: 15px;
     margin: 0;
     padding: 0;
     float: right;
@@ -753,6 +761,7 @@ figure {
 }
 
 #date1 a {
+    font-size: 1em;
     height: 19px;
     line-height: 23px;
     padding: 2px 10px 2px 10px;
@@ -898,6 +907,7 @@ figure {
     padding: 3px 10px 6px 10px;
     width: auto;
     text-align: center;
+    height: 21px;
 }
 
 #nav_menu_left {
@@ -1067,6 +1077,10 @@ figure {
     line-height: 25px;
 }
 
+#sidebar li select option{
+    background-color: #000000;
+}
+
 #sidebar li label {
     display: none;
 }
@@ -1082,8 +1096,7 @@ figure {
     float: left;
     padding-top: 3px;
     padding-bottom: 3px;
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 0 0 9px 0;
     text-align: center;
     width: 60%;
 }

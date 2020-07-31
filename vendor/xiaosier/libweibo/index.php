@@ -29,7 +29,7 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 	<p>总而言之，SAE就是简单高效的分布式web服务开发、运行平台。</p>
 	<p>更多SAE相关内容，请点击 <a href="http://sae.sina.com.cn/?m=devcenter" target="_blank">http://sae.sina.com.cn/?m=devcenter</a> 。</p>
 	<!-- 授权按钮 -->
-    <p><a href="<?=$code_url?>"><img src="weibo_login.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a></p>
+    <p><a href="<?php echo $code_url?>"><img src="weibo_login.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a></p>
 
 </body>
 </html>
