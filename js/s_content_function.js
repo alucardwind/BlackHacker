@@ -1,7 +1,7 @@
 window.onload = function () {
 	img_fix();
     $('#load_mask').remove();
-    single_page_fix_size();
+	single_page_fix_size();
 	nav_menu_left();
 	button_out_left();
 	button_out_right();
@@ -10,7 +10,6 @@ window.onload = function () {
 	title_left_single();
 	date1_left_single();
 	date1_right_single();
-
 	datei_left_single();
 	datei_bottom_single();
 	fix_code();
@@ -44,4 +43,5 @@ window.onload = function () {
     need_cookie(page_width);
     postwords_left_single();
 	postwords_right_single();
+	logo_position("s");
 };

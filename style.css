@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.8
+Version: 2.4.9
 Author:killgod
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -11,6 +11,8 @@ Description: The BlackHack theme for WordPress is only for the author use.一个
 License: GNU General Public License v3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: blackhack
+Tested up to: 5.0
+Requires PHP: PHP7
 
 You can use this theme for free, have fun!
 
@@ -135,6 +137,7 @@ a:hover {
 #logoborder {
     float: left;
     width: 100%;
+    height: 101px;
     position: relative;
 }
 
@@ -153,11 +156,11 @@ a:hover {
     text-align: center;
     border-top: 1px #000 solid; /*  为了维持左标题的宽度  */
     padding-left: 20%;
+    display: none;
 }
 
 #displayl {
     height: 80px;
-    display: none;
     background: url(images/title_bg.png) repeat-x;
     padding-top: 4px;
     float: left;
@@ -165,19 +168,17 @@ a:hover {
 }
 
 .titlel {
-    display: none;
+
 }
 
 #logoright {
     float: left;
     overflow: hidden;
     border-top: 1px #000 solid;
-    margin-left: 50%;
 }
 
 #displayr {
     height: 80px;
-    display: block;
     background: url(images/title_bg.png) repeat-x;
     padding-top: 4px;
     float: left;
@@ -325,12 +326,12 @@ a:hover {
 }
 
 .title_background{
-    background-image: linear-gradient(to right, rgba(88, 199, 238, 0), rgba(255, 0, 0, 0.5), rgba(88, 199, 238, 0));
     height: 40px;
     z-index: 0;
     position: relative;
     top: -40px;
     display: none;
+    background-image: radial-gradient(closest-side at 50% 50%,rgba(255, 0, 0, 0.7), rgba(88, 199, 238, 0));
 }
 
 #prompt {
@@ -1020,7 +1021,6 @@ figure {
 #searchform {
     width: 90%;
     height: 30px;
-    border-radius: 8px;
     border: 2px #58c7ee solid;
     background-color: rgba(88, 199, 238, 0.2);
     padding-left: 2px;
@@ -1071,7 +1071,6 @@ figure {
     margin-right: 25%;
     width: 50%;
     border: 1px #58c7ee solid;
-    border-radius: 5px;
     vertical-align: middle;
     height: 25px;
     line-height: 25px;
@@ -1089,6 +1088,7 @@ figure {
     display: none;
     padding-top: 10px;
     clear: both;
+    float: left;
 }
 
 #sidebar li ul li {
@@ -1166,7 +1166,7 @@ figure {
 }
 
 .toggle_display {
-    display: none;
+    
 }
 
 #bilibili {

@@ -1,6 +1,7 @@
 #weibo {
     padding-top: 10px;
     clear: both;
+    display: none;
 }
 
 #weibo table {
@@ -49,8 +50,13 @@
     margin-top: 5px;
     border-top: 1px #58c7ee solid;
     border-left: 1px #58c7ee solid;
-    padding-top: 2px;
-    padding-left: 5px;
+    padding: 2px 5px 5px 5px;
+}
+
+.weibo_yinyong_user{
+    background-color: rgba(88, 199, 238, 0.2);
+    padding: 3px 5px 3px 5px;
+    line-height: 30px;
 }
 
 #re_ip_hit {

@@ -79,8 +79,8 @@
             print_r( $item[ 'text' ] );
             echo "</div>";
             if($item['retweeted_status']){
-                echo "<div class = 'weibo_yinyong'>引用自<br />";
-                echo $item['retweeted_status']['user']['screen_name']."<br />";
+                echo "<div class = 'weibo_yinyong'>";
+                echo "<span class = 'weibo_yinyong_user'><i class='fab fa-weibo'></i> ".$item['retweeted_status']['user']['screen_name']."</span><br>";
                 echo $item['retweeted_status']['text']."<br />";
                 /*if ( $item['retweeted_status'][ 'thumbnail_pic' ] ) {
                     foreach ( $item['retweeted_status'][ 'pic_urls' ] as $weibo_pic ) {

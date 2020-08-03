@@ -44,9 +44,7 @@ require 'vendor/autoload.php'
             $("#button-in").click(function () {
                 var runin = new runEffectin();
             });
-
             title_hover();
-
         });
     </script>
     <?php wp_head(); ?>
@@ -57,20 +55,6 @@ require 'vendor/autoload.php'
     <div id="header">
         <div id="logoborder">
             <canvas id="left_top" width="120" height="120"></canvas>
-            <div id="logoleft">
-                <canvas class="logo_left titlel" width="280" height="200"></canvas>
-                <div id="displayl">
-                    <div class="name">
-                        <a href="<?php echo esc_url(home_url('/')); ?>"
-                           title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
-                           rel="home"><?php bloginfo('name'); ?></a>
-                    </div>
-                    <div class="info">
-                        <?php bloginfo('description'); ?>
-                    </div>
-                </div>
-                <canvas class="logo_right titlel" width="80" height="168"></canvas>
-            </div>
             <div id="logoright">
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">
