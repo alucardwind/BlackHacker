@@ -24,9 +24,9 @@
                 </script>
                 <div id="fitchrome">
                     <div id="button-border">
-                        <div id="button-out" class="0"><a>Open Page</a></div>
+                        <div id="button-out" class="0"><a>展开网页</a></div>
                         <canvas id="button_out_right" width="100" height="120"></canvas>
-                        <div id="button-in" class="0"><a>Close Page</a></div>
+                        <div id="button-in" class="0"><a>闭合网页</a></div>
                         <canvas id="button_out_left" width="150" height="120"></canvas>
                         <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu')); ?>
                         <canvas id="nav_menu_left" width="200" height="60"></canvas>

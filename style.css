@@ -2,8 +2,8 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.9
-Author:killgod
+Version: 2.4.13
+Author:左半红印
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
 Tags: blog
@@ -11,7 +11,7 @@ Description: The BlackHack theme for WordPress is only for the author use.一个
 License: GNU General Public License v3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: blackhack
-Tested up to: 5.0
+Tested up to: 5.4.2
 Requires PHP: PHP7
 
 You can use this theme for free, have fun!
@@ -27,8 +27,6 @@ You can use this theme for free, have fun!
     font-size: 15px;
     font-family: Microsoft YaHei,DejaVu Sans Mono,Ubuntu Mono,Droid Sans Mono;
 }
-
-/*** COMMON ELEMENTS ***/
 
 html, body {
     height: 100%;
@@ -167,10 +165,6 @@ a:hover {
     margin-top: 6px;
 }
 
-.titlel {
-
-}
-
 #logoright {
     float: left;
     overflow: hidden;
@@ -196,6 +190,7 @@ a:hover {
 
 .info {
     font-size: 10px;
+    text-align: center;
 }
 
 .logo_right {
@@ -323,6 +318,7 @@ a:hover {
     z-index: 10;
     position: relative;
     font-size: 1.1em;
+    font-weight: bold;
 }
 
 .title_background{
@@ -331,7 +327,7 @@ a:hover {
     position: relative;
     top: -40px;
     display: none;
-    background-image: radial-gradient(closest-side at 50% 50%,rgba(255, 0, 0, 0.7), rgba(88, 199, 238, 0));
+    background-image: radial-gradient(closest-side at 50% 50%,rgba(255, 0, 0, 0.9), rgba(88, 199, 238, 0));
 }
 
 #prompt {
@@ -400,7 +396,7 @@ a:hover {
 }
 
 .sticky .postwords {
-    width: 487px;
+    width: 488px;
     border-top: 0;
     border-bottom: 2px solid #58c7ee;
     margin-bottom: 0px;
@@ -472,13 +468,13 @@ a:hover {
 }
 
 .sticky #comment {
-    width: 966px;
+    width: 295px;
     background: 0;
     border-top: 2px #58c7ee solid;
     border-left: 2px #58c7ee solid;
     border-right: 2px #58c7ee solid;
     border-bottom: 0;
-    height: 70px;
+    height: 65px;
 }
 
 .sticky #comment_right {
@@ -501,7 +497,7 @@ a:hover {
 
 .sticky #submit {
     clear: both;
-    margin-left: 70px;
+    margin-left: 10px;
 }
 
 .sticky .comments input {
@@ -586,9 +582,15 @@ a:hover {
 .postwords blockquote {
     padding: 5px;
     margin: 5px;
-    border-top: 1px #fff solid;
-    border-left: 1px #fff dashed;
+    border: 1px #58c7ee dashed;
     overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+
+.postwords blockquote p{
+    text-indent: 0;
+    margin-bottom: 0;
 }
 
 .postwords strong {
@@ -606,9 +608,12 @@ a:hover {
 }
 
 .postwords iframe{
-    /*width: 445px;*/
+    width: 430px;
+    height: 242px;
     border-right: 1px solid #58c7ee;
     border-left: 1px solid #58c7ee;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .blocks-gallery-item{
@@ -894,6 +899,20 @@ figure {
     padding-bottom: 30px;
 }
 
+#load_mask{
+    color: white;
+    font-size: 5em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 13;
+    background-color: rgb(0,0,0,0.8);
+    text-align: center;
+}
+
+#load_mask:before{
+    filter: blur(10px);
+}
+
 /* nav */
 
 .nav-menu ul {
@@ -1163,10 +1182,6 @@ figure {
     background: rgba(88, 199, 238, 0.2);
     display: inline-block;
     border: solid 1px #58c7ee;
-}
-
-.toggle_display {
-    
 }
 
 #bilibili {

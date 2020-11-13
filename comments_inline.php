@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 	
 	<?php endif; ?>
 
-		<p><textarea name="comment" id="comment" cols="30" rows="3" tabindex="4"></textarea></p>
+		<p><textarea name="comment" id="comment" cols="30" rows="3" tabindex="4" placeholder="在此处填写评论"></textarea></p>
 
 		<p><input name="submit" type="submit" id="submit" tabindex="5" value="发表评论" />
 		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></p>

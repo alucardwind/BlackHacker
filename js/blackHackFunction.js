@@ -15,12 +15,10 @@ function logo_position(singular_or_not){
 	logo_width = logo_width.toFixed(0);
 	let col1_width = $('.col1').width();
     logo_position_right = col1_width - logo_width - 70;
-    console.log(logo_position_right);
 	let page_width = $('#page').width();
 	page_width = page_width / 2;
 	page_width = page_width.toFixed(0);
 	logo_position_left = page_width - logo_width - 70;
-    console.log(logo_position_left);
     if(singular_or_not == "m"){
         $('#logoright').css('margin-left',logo_position_right + "px");
     }
@@ -38,16 +36,16 @@ function runEffectout() {
 	}, 600);
 	$("#nav_menu_left").toggle("slide", {direction: "up"}, 600,function(){
 		$('#bili_player').toggle("slide", {direction: "up"}, 600);
-		var ptbder = document.getElementsByClassName('ptbder');
+		let ptbder = document.getElementsByClassName('ptbder');
+		let ia = 0;
 		for(let iii=0; iii<ptbder.length; iii++){
 			$(ptbder[iii]).toggle("slide", {direction: "up"}, 600,function(){
-			    var ia = iii+1;
-				if(ia === ptbder.length){
-					var img_fix_auto = new img_fix();
-					let m_img_fix_auto = new m_img_fix();
+			    ia = iii+1;
+				if(ia == ptbder.length){
+					img_fix();
+					m_img_fix();
 					fix_code();
 					let sideber_li_ul = document.querySelectorAll('#sidebar li ul');
-					//let sideber_li_ul = document.getElementsByClassName('widget')
 					for(let ii=0; ii<sideber_li_ul.length; ii++){
 						$(sideber_li_ul[ii]).toggle("slide",{direction: "up"},600,function(){
 							let iia = ii+1;
@@ -110,11 +108,7 @@ function runEffectin() {
 
 function m_img_fix(){
 	let img;
-	let img_width;
-	let img_height;
-	let bili;
-	let new_height;
-	let  figure_array = document.querySelectorAll('.wp-block-gallery');
+	let figure_array = document.querySelectorAll('.wp-block-gallery');
 	if(figure_array.length > 0){
 		for(let i = 0; i < figure_array.length; i++){
 			img = figure_array[i].querySelectorAll('ul li figure a');
@@ -126,60 +120,57 @@ function m_img_fix(){
 }
 
 function img_fix(){
-	var figure_array = document.querySelectorAll('.wp-block-image');
-	var figure_width;
-	var figure_height;
-	var img;
-	var img_width;
-	var img_height;
-	var bili;
-	var get_pos;
-	if(figure_array){
-		for(var i=0; i<figure_array.length; i++){
-			img = figure_array[i].querySelector('figure img');
-			img_width = img.naturalWidth;
-			if(img_width !== 0){
-				img_height = img.naturalHeight;
-				bili = img_height/img_width;
-				figure_width = figure_array[i].offsetWidth;
-				get_pos = figure_array[i].querySelector('.aligncenter');
-				if(get_pos){
-					if(img_width > figure_width){
-						figure_width = figure_width-20;
-						$(img).width(figure_width);
-						figure_height = figure_width*bili;
-						$(img).height(figure_height);
-					}
+	let figure_width;
+	let figure_height;
+	let img;
+	let img_width;
+	let img_height;
+	let bili;
+	let get_pos;
+	$('.wp-block-image').each(function () {
+		img = this.querySelector('figure img');
+		img_width = $(img).attr('width');
+		if(img_width != 0) {
+			img_height = $(img).attr('height');
+			bili = img_height / img_width;
+			figure_width = this.offsetWidth;
+			get_pos = this.querySelector('.aligncenter');
+			if (get_pos) {
+				if (img_width > figure_width) {
+					figure_width = figure_width - 20;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
 				}
-				get_pos = figure_array[i].querySelector('.alignleft');
-				if(get_pos){
-					if(img_width > figure_width / 2){
-						figure_width = (figure_width-20)/2;
-						$(img).width(figure_width);
-						figure_height = figure_width*bili;
-						$(img).height(figure_height);
-					}
+			}
+			get_pos = this.querySelector('.alignleft');
+			if (get_pos) {
+				if (img_width > figure_width / 2) {
+					figure_width = (figure_width - 20) / 2;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
 				}
-				get_pos = figure_array[i].querySelector('.alignright');
-				if(get_pos){
-					if(img_width > figure_width / 2){
-						figure_width = (figure_width-20)/2;
-						$(img).width(figure_width);
-						figure_height = figure_width*bili;
-						$(img).height(figure_height);
-					}
+			}
+			get_pos = this.querySelector('.alignright');
+			if (get_pos) {
+				if (img_width > figure_width / 2) {
+					figure_width = (figure_width - 20) / 2;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
 				}
 			}
 		}
-	}
+	});
 	//以下用于兼容老版编辑器输出的文章图片
-	var pw_width;
-	var pw_array = document.getElementsByClassName('postwords');
-	for(var ii = 0; ii<pw_array.length; ii++){
-		var img_array = pw_array[ii].querySelectorAll('p img');
+	let pw_width;
+	let pw_array = document.getElementsByClassName('postwords');
+	for(let ii = 0; ii<pw_array.length; ii++){
+		let img_array = pw_array[ii].querySelectorAll('p img');
 		if(img_array.length > 0){
 			pw_width = pw_array[ii].offsetWidth;
-			for(var iii = 0; iii<img_array.length; iii++){
+			for(let iii = 0; iii<img_array.length; iii++){
 				img_width = img_array[iii].naturalWidth;
 				img_height = img_array[iii].naturalHeight;
 				bili = img_height / img_width;
@@ -372,6 +363,13 @@ function comment_right(){
 	com_tx.strokeStyle = "#58c7ee";
 	com_tx.lineWidth = 1;
 	com_tx.globalAlpha = 1;
+    com_tx.stroke();
+    com_tx.beginPath();
+    com_tx.moveTo(4,84);
+    com_tx.lineTo(4,21);
+    com_tx.lineTo(0,21);
+    com_tx.strokeStyle = "#58c7ee";
+	com_tx.lineWidth = 2;
 	com_tx.stroke();
 }
 
@@ -442,7 +440,13 @@ function postwords_bottom(){
 	pos_tx.lineTo(320,164);
 	pos_tx.strokeStyle = "#58c7ee";
 	pos_tx.lineWidth = 1;
-	pos_tx.stroke();
+    pos_tx.stroke();
+    pos_tx.beginPath();
+    pos_tx.moveTo(579,19);
+	pos_tx.lineTo(0,19);
+    pos_tx.strokeStyle = "#58c7ee";
+	pos_tx.lineWidth = 2;
+    pos_tx.stroke();
 } 
 
 function title_right(){
@@ -1463,11 +1467,11 @@ function single_page_fix_size(){
 	let post = $(".single_postwords");
 	if(post == null){return;}
 	let post_width = post.width();
-	let iframe_array = document.querySelectorAll("iframe");
-	if(iframe_array == null){return;}
-	for(let i = 0;i < iframe_array.length; i++){
-		$(iframe_array[i]).width(post_width);
-    }
+	$('iframe').each(function(){
+		$(this).width(post_width);
+		post_width = post_width / 16 * 9 + 68;
+		$(this).height(post_width);
+	});
     let post_height = post.outerHeight();
     $('.postborder').height(post_height);
 }
@@ -1475,18 +1479,26 @@ function single_page_fix_size(){
 function load_time(){
 	let load_div = document.createElement("div");
 	load_div.innerHTML = "正在加载中……";
-	load_div.style.color = "white";
-	load_div.style.fontSize = "5em";
-	load_div.style.fontWeight = "bold";
 	load_div.id = 'load_mask';
-	load_div.style.position = 'absolute';
-	load_div.style.zIndex = '13';
-	load_div.style.backgroundColor = 'rgb(0,0,0,0.8)';
-	load_div.style.textAlign = 'center';
-	let pw_width = $("#border").width();
-	let pw_height = $("#border").height();
+	let pw_width = $('#border').width();
+	let client_height = document.documentElement.clientHeight;
 	load_div.style.width = pw_width;
 	load_div.style.height = '100%';
-	load_div.style.lineHeight = pw_height+"px";
+	load_div.style.lineHeight = client_height+"px";
 	$("#border").prepend(load_div);
+	$('.mask-main').css('filter','blur(10px)');
+}
+
+function getCookie(name){
+	let arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+	if(arr=document.cookie.match(reg)){
+		return unescape(arr[2]);
+	}
+	else{
+		return null;
+	}
+}
+
+function setCookie(name,value){
+	document.cookie = name + "="+ escape (value) + ";";
 }

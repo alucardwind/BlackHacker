@@ -1,6 +1,7 @@
 window.onload = function () {
 	img_fix();
-    $('#load_mask').remove();
+	$('#load_mask').remove();
+	$('.mask-main').css('filter','none');
 	single_page_fix_size();
 	nav_menu_left();
 	button_out_left();
