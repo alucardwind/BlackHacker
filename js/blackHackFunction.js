@@ -119,16 +119,74 @@ function m_img_fix(){
 	}
 }
 
+function gallery_fix(){
+	$('.blocks-gallery-caption').each(function(){
+		$(this).css('border','none');
+	});
+	$('.blocks-gallery-item').each(function () {
+		//$(this).css('marginLeft',7);
+		//$(this).css('marginRight',7);
+		let img = this.querySelector('figure a img');
+		$(img).height(100);
+		$(img).css('border','none');
+		$(img).css('marginLeft',0);
+		$(img).css('marginBottom',0);
+		$(img).css('padding',0);
+
+	});
+	$('.wp-block-gallery').each(function(){
+		$(this).css('borderTopStyle','solid');
+		$(this).css('borderTopWidth','1px');
+		$(this).css('borderBottomStyle','solid');
+		$(this).css('borderBottomWidth','1px');
+	});
+}
+
 function img_fix(){
+	let img;
 	let figure_width;
 	let figure_height;
-	let img;
 	let img_width;
 	let img_height;
 	let bili;
 	let get_pos;
 	$('.wp-block-image').each(function () {
 		img = this.querySelector('figure img');
+		img_width = $(img).attr('width');
+		if(img_width != 0) {
+			img_height = $(img).attr('height');
+			bili = img_height / img_width;
+			figure_width = this.offsetWidth;
+			get_pos = this.querySelector('.aligncenter');
+			if (get_pos) {
+				if (img_width > figure_width) {
+					figure_width = figure_width - 20;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
+				}
+			}
+			get_pos = this.querySelector('.alignleft');
+			if (get_pos) {
+				if (img_width > figure_width / 2) {
+					figure_width = (figure_width - 20) / 2;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
+				}
+			}
+			get_pos = this.querySelector('.alignright');
+			if (get_pos) {
+				if (img_width > figure_width / 2) {
+					figure_width = (figure_width - 20) / 2;
+					figure_height = figure_width * bili;
+					$(img).width(figure_width);
+					$(img).height(figure_height);
+				}
+			}
+		}
+		//为了兼容图片格式的再次变化，进行修改
+		img = this.querySelector('figure a img');
 		img_width = $(img).attr('width');
 		if(img_width != 0) {
 			img_height = $(img).attr('height');
@@ -1323,29 +1381,23 @@ function need_cookie(page_width) {
 }
 
 function find_point_img() {
-	let img_array = document.querySelectorAll(".blocks-gallery-item figure");
-	if(img_array == null){
-		return;
-	}
 	let middle_line = page_width / 2;
-	for(let i = 0; i < img_array.length; i++){
-		$(img_array[i]).mouseenter(function () {
-			let img_div = this.querySelector('img');
+	$('.blocks-gallery-item').each(function () {
+		$(this).mouseenter(function () {
+			let img_div = this.querySelector('figure a img');
 			let img_src = $(img_div).attr('src');
 			let ajax_img_width = img_div.naturalWidth;
 			let ajax_img_height = img_div.naturalHeight;
 			let bili_width_height = ajax_img_width / ajax_img_height;
 			let screen_heigth = document.documentElement.clientHeight;
 			if(ajax_img_width > middle_line){
-				ajax_img_width = middle_line - 50;
+				ajax_img_width = middle_line - 100;
 				ajax_img_height = ajax_img_width / bili_width_height;
 			}
 			if(ajax_img_height > screen_heigth){
 				ajax_img_height = screen_heigth / 1.5;
 				ajax_img_width = ajax_img_height * bili_width_height;
 			}
-			change_content(img_src,ajax_img_width,ajax_img_height);
-			$("#show_large_image").toggle(300);
 			let x = this.offsetLeft;
 			let y = this.offsetTop - document.body.scrollTop + window.screenTop + document.body.clientTop;
 			let bor = document.getElementById("border");
@@ -1363,33 +1415,35 @@ function find_point_img() {
 			else {
 				x = x + x1 - ajax_img_width - 40;
 			}
-			$("#show_large_image").css("left",x+"px");
-			$("#show_large_image").css("top",y+"px");
+			$.ajax({
+				url:'https://www.redonleft.com/wp-content/themes/blackhack/ajax/ajax_show_img.php',
+				method: 'GET',
+				data:{
+					img_src:img_src,
+					imgwidth:ajax_img_width,
+					imgheight:ajax_img_height
+				},
+				success:function (result) {
+					$("#show_large_image").html(result);
+					$("#show_large_image").css("left",x+"px");
+					$("#show_large_image").css("top",y+"px");
+					$("#show_large_image").show('size',300);
+				}
+			});
 		});
-		$(img_array[i]).mouseleave(function () {
-			change_content("","","");
-			$("#show_large_image").css("display","none");
+		$(this).mouseleave(function () {
+			$('#show_large_image').mouseleave(function () {
+				close_ajax_img();
+			});
 		});
-	}
+	});
 }
 
-function change_content(src,imgwidth,imgheight) {
-	//let xmlhttp;
-	if (window.XMLHttpRequest) {
-		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-		xmlhttp = new XMLHttpRequest();
-	} else {
-		// IE6, IE5 浏览器执行代码
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			document.getElementById("show_large_image").innerHTML = xmlhttp.responseText;
-		}
-	}
-
-	xmlhttp.open("GET", "https://www.redonleft.com/wp-content/themes/blackhack/ajax/ajax_show_img.php?img_src="+src+"&imgwidth="+imgwidth+"&imgheight="+imgheight, true);
-	xmlhttp.send();
+function close_ajax_img() {
+	$("#show_large_image").html("");
+	$("#show_large_image").css("left",0+"px");
+	$("#show_large_image").css("top",0+"px");
+	$("#show_large_image").css("display","none");
 }
 
 function fix_code(){
@@ -1466,11 +1520,11 @@ function title_hover() {
 function single_page_fix_size(){
 	let post = $(".single_postwords");
 	if(post == null){return;}
-	let post_width = post.width();
+	let post_width = post.width() - 4;
 	$('iframe').each(function(){
 		$(this).width(post_width);
-		post_width = post_width / 16 * 9 + 68;
-		$(this).height(post_width);
+		let post_height = post_width / 16 * 9 + 68;
+		$(this).height(post_height);
 	});
     let post_height = post.outerHeight();
     $('.postborder').height(post_height);

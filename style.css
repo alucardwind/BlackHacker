@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.13
+Version: 2.4.16
 Author:左半红印
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -683,11 +683,11 @@ a:hover {
 }
 
 .single_postwords {
-    width: 864px;
+    width: 860px;
     background: 0;
     padding-top: 40px;
     padding-left: 20px;
-    padding-right: 0px;
+    padding-right: 4px;
     border-left: 1px solid #58c7ee;
     float: left;
 }
