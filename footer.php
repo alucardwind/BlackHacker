@@ -25,4 +25,23 @@ rol_player(array('type' => 'netease'));
         $(".nav-menu").css("display","none");
         $(".nav-menu_yes_middle").css("display","block");
     }
+
+    $("#button-out").click(function () {
+        var runout = new runEffectout();
+    });
+
+    $("#button-in").click(function () {
+        var runin = new runEffectin();
+    });
+
+    title_hover();
+    border_loop();
+    setInterval(border_loop,3300);
 </script>
+<?php
+if (is_singular()) {
+	echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/s_content_Function.js'></script>";
+} else {
+	echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
+}
+?>

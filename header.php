@@ -28,28 +28,9 @@ require 'vendor/autoload.php'
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     <!-- 更新APlayer CSS-->
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/aplayer.css" type="text/css" media="screen"/>
-    <?php
-    if (is_singular()) {
-        echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/s_content_Function.js'></script>";
-    } else {
-        echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
-    }
-    ?>
+
     <!--<script src="https://kit.fontawesome.com/e9a2b0295c.js"></script>-->
     <script src="https://cdn.bootcss.com/font-awesome/5.10.0-12/js/all.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            $("#button-out").click(function () {
-                var runout = new runEffectout();
-            });
-
-            $("#button-in").click(function () {
-                var runin = new runEffectin();
-            });
-            title_hover();
-        });
-    </script>
     <?php wp_head(); ?>
 </head>
 <body>

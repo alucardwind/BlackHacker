@@ -17,7 +17,7 @@
         display: block;
     }
 </style>
-<!-- main page block -->
+<!-- single -->
 <div id="border">
     <div class="mask-main">
         <div class="mask-left">
@@ -67,6 +67,7 @@
                     <?php endwhile; // end of the loop. ?>
                 <script>
                     var page_width = document.querySelector("body").offsetWidth;
+                    gallery_fix();
                     find_point_img();
                 </script>
                 <div id="last"></div>

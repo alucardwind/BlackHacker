@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<!-- main page block -->
+<!-- index -->
 <div id="border">
     <div class="mask-main">
         <div class="mask-left">
@@ -29,7 +29,15 @@
                 </script>
                 <div id="fitchrome">
                     <div id="button-border">
-                        <div id="button-out" class="0"><a>展开网页</a></div>
+                        <div id="button-out" class="0 button_border_out">
+                            <span class="border_top"></span>
+                            <span class="border_right"></span>
+                            <span class="ui-border-element">
+                                <a>展开网页</a>
+                            </span>
+                            <span class="border_left"></span>
+                            <span class="border_bottom"></span>
+                        </div>
                         <canvas id="button_out_right" width="100" height="120"></canvas>
                         <div id="button-in" class="0"><a>闭合网页</a></div>
                         <canvas id="button_out_left" width="150" height="120"></canvas>
@@ -42,14 +50,16 @@
                     button_out_left();
                     button_out_right();
                 </script>
-                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu_yes_middle')); ?>
-                <?php $num = 0;
-                $con3_yes = 0; ?>
+                <?php
+                wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu_yes_middle'));
+                $num = 0;
+                $con3_yes = 0;
+                ?>
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <!-- post -->
-
                         <?php
+
                         if ($_GET['bili_av']) {
                             $bili_av = $_GET['bili_av'];
                         } else {
@@ -84,14 +94,13 @@
                                 echo "<div id='con3'> ";
                             }
                         }
-                        //include 'content.php';
                         get_content();
                         if ($con3_yes == 0) {
-                            if ($num == 3 or $num == 6) {
+                            if ($num == 3 || $num == 6 || $num == count($posts)) {
                                 echo " </div> ";
                             }
                         } else {
-                            if ($num == 2 or $num == 4 or $num == 6) {
+                            if ($num == 2 || $num == 4 || $num == 6 || $num == count($posts)) {
                                 echo " </div> ";
                             }
                         }
@@ -112,6 +121,7 @@
                     postwords_top();
                     date_right();
                     date_left();
+                    gallery_fix();
                     find_point_img();
                 </script>
                 <div id="last"></div>

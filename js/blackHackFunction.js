@@ -153,6 +153,7 @@ function img_fix(){
 	$('.wp-block-image').each(function () {
 		img = this.querySelector('figure img');
 		img_width = $(img).attr('width');
+		console.log(img_width);
 		if(img_width != 0) {
 			img_height = $(img).attr('height');
 			bili = img_height / img_width;
@@ -185,6 +186,7 @@ function img_fix(){
 				}
 			}
 		}
+		//console.log(img);
 		//为了兼容图片格式的再次变化，进行修改
 		img = this.querySelector('figure a img');
 		img_width = $(img).attr('width');
@@ -221,6 +223,7 @@ function img_fix(){
 			}
 		}
 	});
+
 	//以下用于兼容老版编辑器输出的文章图片
 	let pw_width;
 	let pw_array = document.getElementsByClassName('postwords');
@@ -1555,4 +1558,54 @@ function getCookie(name){
 
 function setCookie(name,value){
 	document.cookie = name + "="+ escape (value) + ";";
+}
+
+function border_loop() {
+	$('.border_top').animate({
+		right:"0px",
+		left:'50px'
+	}, 2000, 'linear', function () {
+		$('.border_right').animate({
+			top:'100%',
+			bottom:'-40px'
+		},2000,'linear',function () {
+			$('.border_right').css({
+				top: '-40px',
+				bottom: '100%'
+			});
+		});
+		$('.border_top').animate({
+			right:"-100px",
+			left:'100%'
+		},500,'linear',function () {
+			$('.border_top').css({
+				right: '100%',
+				left: '-100px'
+			});
+		});
+	});
+
+	$('.border_bottom').animate({
+		right:"50px",
+		left:'0px'
+	}, 2000, 'linear', function () {
+		$('.border_left').animate({
+			top:'-40px',
+			bottom:'100%'
+		},2000,'linear',function () {
+			$('.border_left').css({
+				top: '100%',
+				bottom: '-40px'
+			});
+		});
+		$('.border_bottom').animate({
+			right:"100%",
+			left:'-100px'
+		},500,'linear',function () {
+			$('.border_bottom').css({
+				right: '-100px',
+				left: '100%'
+			});
+		});
+	});
 }

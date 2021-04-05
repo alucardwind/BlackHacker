@@ -5,4 +5,4 @@ mobile_sidebar_up();
 mobile_sidebar_down();
 col3_sidebar_action();
 weibo_user_left();
-img_fix();
+//img_fix();

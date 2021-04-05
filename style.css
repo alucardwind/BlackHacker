@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.16
+Version: 2.4.17
 Author:左半红印
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -11,7 +11,7 @@ Description: The BlackHack theme for WordPress is only for the author use.一个
 License: GNU General Public License v3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: blackhack
-Tested up to: 5.4.2
+Tested up to: 5.6.1
 Requires PHP: PHP7
 
 You can use this theme for free, have fun!
@@ -218,16 +218,62 @@ a:hover {
 
 
 #button-out {
-    background: url(images/button.png) repeat-x;
+    background: url(images/button.png) repeat;
     padding: 7px 25px 0 25px;
     float: right;
     height: 53px;
-    border-right: 2px solid #58c7ee;
-    border-left: 2px solid #58c7ee;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+#button-out:hover{
+    cursor: pointer;
 }
 
 #button-out a{
     font-size: 24px;
+}
+
+.border_top, .border_right, .border_left, .border_bottom {
+    content: '';
+    position: absolute;
+}
+
+.border_top{
+    border: 2px solid #58c7ee;
+    border-image: linear-gradient(to right, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 4 0 0 0;
+    right: 100%;
+    left: -100px;
+    top: 0;
+    bottom: 0;
+}
+
+.border_right{
+    border: 2px solid #58c7ee;
+    border-image: linear-gradient(to bottom, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 4 0 0;
+    right: 0;
+    left: 0;
+    top: -40px;
+    bottom: 100%;
+}
+
+.border_bottom{
+    border: 2px solid #58c7ee;
+    border-image: linear-gradient(to left, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 4 0;
+    right: -100px;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+.border_left{
+    border: 2px solid #58c7ee;
+    border-image: linear-gradient(to top, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 0 4;
+    right: 0;
+    left: 0;
+    top: 100%;
+    bottom: -40px;
 }
 
 #button_out_right {
@@ -250,7 +296,10 @@ a:hover {
     font-size: 24px;
     padding: 7px 25px 0 25px;
     float: right;
-    height: 53px;
+    height: 49px;
+    width: 100px;
+    border-top: 2px solid #58c7ee;
+    border-bottom: 2px solid #58c7ee;
 }
 
 #button-in a{
@@ -353,13 +402,6 @@ a:hover {
 
 .tbl {
 
-    float: right;
-}
-
-#ptbl {
-    width: 20px;
-    height: 35px;
-    background: url(images/ptbl.png) right no-repeat;
     float: right;
 }
 
