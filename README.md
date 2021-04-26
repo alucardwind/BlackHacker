@@ -3,9 +3,9 @@
 https://www.redonleft.com<br><br>
 或者
 大致长下面这个样子<br><br>
-![](/screenshot.jpg)<br>
-![](/screenshot1.jpg)<br>
-![](/screenshot2.jpg)
+![](/screenshot.png)<br>
+![](/screenshot1.png)<br>
+![](/screenshot2.png)
 <br><br>
 本主题是一个黑色科幻风格的日志文章展示主题。主题具备一个“页面展开”功能，在点击设定按钮后，整个页面才会完整展开，完整的日志和侧边栏内容才会显示出来。<br>
 除此以外，本主题还使用了其他多个插件。<br>
