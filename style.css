@@ -2,7 +2,7 @@
 
 /* 
 Theme Name:BlackHack
-Version: 2.4.17
+Version: 2.5
 Author:左半红印
 Author URI:https://www.redonleft.com/
 Theme URI: https://github.com/alucardwind/blackhack
@@ -53,6 +53,113 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+/* 封面样式 */
+
+#cover{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 20;
+    border: 2px solid yellow;
+}
+
+#cover_top{
+    width: 100%;
+    height: 20px;
+    border-bottom: 2px solid yellow;
+    display: none;
+}
+
+#cover_bottom{
+    width: 100%;
+    height: 20px;
+    border-top: 2px solid yellow;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+.cover_border{
+    background-image: repeating-linear-gradient(45deg,red,red 5%,yellow 5.01%,yellow 10%,red 10.01%);
+}
+
+#text_area{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    overflow: hidden;
+    color: yellow;
+    font-size: 14px;
+    float: left;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 5px solid yellow;
+    border-bottom: 5px solid yellow;
+}
+
+.writecode {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: coder 2s;
+    width: 100%;
+    height: 30px;
+}
+
+@keyframes coder {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+#svg_area{
+    display: none;
+    position: absolute;
+    width: 650px;
+    height: 0px;
+    overflow: hidden;
+    color: yellow;
+    font-size: 14px;
+    float: left;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 5px solid yellow;
+    border-bottom: 5px solid yellow;
+}
+
+.line-drawing{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: visible;
+}
+
+.line-drawing path {
+    fill: none;
+    stroke: yellow;
+    stroke-width: 3;
+}
+
+#svg_shadow{
+    display: none;
+}
+
+#svg_shadow path{
+    fill: none;
+    stroke: rgba(0, 255, 0, 0.5);
+    stroke-width: 5;
+    overflow: visible;
+}
+
+#show_svg{
+    display: none;
+}
 
 /* links */
 
@@ -96,6 +203,7 @@ a:hover {
 .mask-left {
     float: left;
     position: relative;
+    user-select: none;
 }
 
 .mask-main .col1,
@@ -186,11 +294,13 @@ a:hover {
 .name a{
     font-size: 3em;
     line-height: 53px;
+    user-select: none;
 }
 
 .info {
     font-size: 10px;
     text-align: center;
+    user-select: none;
 }
 
 .logo_right {
@@ -233,6 +343,16 @@ a:hover {
 
 #button-out a{
     font-size: 24px;
+    user-select: none;
+}
+
+.ui-border-element{
+    position: absolute;
+    border:2px solid rgba(88, 199, 238, 0.2);
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
 }
 
 .border_top, .border_right, .border_left, .border_bottom {
@@ -242,7 +362,7 @@ a:hover {
 
 .border_top{
     border: 2px solid #58c7ee;
-    border-image: linear-gradient(to right, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 4 0 0 0;
+    border-image: linear-gradient(to right, rgba(88, 199, 238,0), rgba(108, 219, 255, 1) 90%, rgba(88, 199, 238, 0) 100%) 4 0 0 0;
     right: 100%;
     left: -100px;
     top: 0;
@@ -251,7 +371,7 @@ a:hover {
 
 .border_right{
     border: 2px solid #58c7ee;
-    border-image: linear-gradient(to bottom, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 4 0 0;
+    border-image: linear-gradient(to bottom, rgba(88, 199, 238,0), rgba(108, 219, 255, 1) 90%, rgba(88, 199, 238, 0) 100%) 0 4 0 0;
     right: 0;
     left: 0;
     top: -40px;
@@ -260,7 +380,7 @@ a:hover {
 
 .border_bottom{
     border: 2px solid #58c7ee;
-    border-image: linear-gradient(to left, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 4 0;
+    border-image: linear-gradient(to left, rgba(88, 199, 238,0), rgba(108, 219, 255, 1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 4 0;
     right: -100px;
     left: 100%;
     top: 0;
@@ -269,7 +389,7 @@ a:hover {
 
 .border_left{
     border: 2px solid #58c7ee;
-    border-image: linear-gradient(to top, rgba(88, 199, 238,0), rgba(88, 199, 238,1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 0 4;
+    border-image: linear-gradient(to top, rgba(88, 199, 238,0), rgba(108, 219, 255, 1) 90%, rgba(88, 199, 238, 0) 100%) 0 0 0 4;
     right: 0;
     left: 0;
     top: 100%;
@@ -304,6 +424,7 @@ a:hover {
 
 #button-in a{
     font-size: 24px;
+    user-select: none;
 }
 
 #fitchrome {
@@ -342,7 +463,24 @@ a:hover {
     margin: auto;
 }
 
-#title {
+.post{
+    position: relative;
+}
+
+.border_shadow_down{
+    top: 22px;
+    bottom: -5px;
+    left: -5px;
+    right: 30px;
+    position: absolute;
+    box-shadow: 0px 0px 10px #005a87;
+}
+
+.border_shadow_content{
+    position: relative;
+}
+
+.title {
     margin-top: 60px;
     margin-bottom: 0px;
     height: 69px;
@@ -363,11 +501,12 @@ a:hover {
     border-bottom: 2px solid #58c7ee;
 }
 
-#title a {
+.title a {
     z-index: 10;
     position: relative;
     font-size: 1.1em;
     font-weight: bold;
+    user-select: none;
 }
 
 .title_background{
@@ -377,6 +516,7 @@ a:hover {
     top: -40px;
     display: none;
     background-image: radial-gradient(closest-side at 50% 50%,rgba(255, 0, 0, 0.9), rgba(88, 199, 238, 0));
+    user-select: none;
 }
 
 #prompt {
@@ -412,7 +552,16 @@ a:hover {
     padding-left: 20px;
 }
 
-.sticky #title {
+.sticky .border_shadow_down{
+    top: 37px;
+    bottom: -5px;
+    left: 15px;
+    right: 30px;
+    position: absolute;
+    box-shadow: 0px 0px 10px #005a87;
+}
+
+.sticky .title {
     display: none;
 }
 
@@ -425,11 +574,11 @@ a:hover {
     float: none;
 }
 
-.sticky #date {
+.sticky .date {
     display: none;
 }
 
-.sticky #postborder {
+.sticky .postborder {
     float: right;
     width: 1011px;
     border-left: 0;
@@ -461,7 +610,7 @@ a:hover {
     height: 82px;
 }
 
-.sticky #date1 a {
+.sticky .date1 a {
     display: none;
 }
 
@@ -576,6 +725,7 @@ a:hover {
     line-height: 180%;
     letter-spacing: 1px;
     overflow: hidden;
+    user-select: text;
 }
 
 .postwords a {
@@ -606,13 +756,14 @@ a:hover {
     padding: 5px;
     margin: 5px;
     margin-bottom: 0;
-    border-top: 1px #fff solid;
+    border-top: 1px #58c7ee solid;
+    border-bottom: 1px #58c7ee dashed;
 }
 
 .postwords figcaption {
     font-style: italic;
     font-weight: bold;
-    border-bottom: 1px #fff solid;
+    border-bottom: 1px #58c7ee solid;
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
@@ -787,7 +938,7 @@ figure {
     z-index: 0;
 }
 
-#fitimg {
+.fitimg {
     height: 1px;
     border: 0;
     display: block;
@@ -799,7 +950,7 @@ figure {
     z-index: 5;
 }
 
-#date1 {
+.date1 {
     margin: 0;
     padding: 0;
     float: right;
@@ -808,7 +959,7 @@ figure {
     height: 23px;
 }
 
-#date1 a {
+.date1 a {
     font-size: 1em;
     height: 19px;
     line-height: 23px;
@@ -871,7 +1022,7 @@ figure {
     margin: 10px 0 0 0;
 }
 
-#date {
+.date {
     width: 99%;
     height: 30px;
     margin: 0;
@@ -893,12 +1044,13 @@ figure {
     width: 1032px;
 }
 
-#datei {
+.datei {
     text-align: right;
     width: 415px;
     float: right;
     background: url(images/date_bg.png) repeat-x;
     line-height: 30px;
+    user-select: none;
 }
 
 #datei_single {
@@ -1073,7 +1225,7 @@ figure {
 /*以下为sidebar样式*/
 
 #sidebar {
-    height: 100%;
+    /*height: 100%;*/
     width: auto;
     padding: 0;
     margin: 15px 0 0 10px;
@@ -1119,6 +1271,7 @@ figure {
     float: left;
     font-size: 15px;
     margin-bottom: 15px;
+    user-select: none;
 }
 
 #sidebar li select {

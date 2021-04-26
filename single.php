@@ -1,4 +1,30 @@
 <?php get_header(); ?>
+<body>
+<div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
+    <div id="header">
+        <div id="logoborder">
+            <canvas id="left_top" width="120" height="120"></canvas>
+            <div id="logoright">
+                <canvas class="logo_left titler" width="280" height="200"></canvas>
+                <div id="displayr">
+                    <div class="name">
+                        <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+                           title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
+                           rel="home"><?php bloginfo('name'); ?></a>
+                    </div>
+                    <div class="info">
+						<?php bloginfo('description'); ?>
+                    </div>
+                </div>
+                <canvas class="logo_right titler" width="80" height="168"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        logo_right();
+        logo_left();
+        left_top();
+    </script>
 <style>
     .postborder {
         display: block;

@@ -1,5 +1,31 @@
 <?php get_header(); ?>
 <!-- archive -->
+<body>
+<div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
+    <div id="header">
+        <div id="logoborder">
+            <canvas id="left_top" width="120" height="120"></canvas>
+            <div id="logoright">
+                <canvas class="logo_left titler" width="280" height="200"></canvas>
+                <div id="displayr">
+                    <div class="name">
+                        <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+                           title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
+                           rel="home"><?php bloginfo('name'); ?></a>
+                    </div>
+                    <div class="info">
+						<?php bloginfo('description'); ?>
+                    </div>
+                </div>
+                <canvas class="logo_right titler" width="80" height="168"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        logo_right();
+        logo_left();
+        left_top();
+    </script>
 <div id="border">
     <div class="mask-main">
         <div class="mask-left">
@@ -27,7 +53,7 @@
                         <div id="button-out" class="0 button_border_out">
                             <span class="border_top"></span>
                             <span class="border_right"></span>
-                            <span class="ui-border-element">
+                            <span class="">
                                 <a>展开网页</a>
                             </span>
                             <span class="border_left"></span>
