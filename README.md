@@ -7,8 +7,24 @@ https://www.redonleft.com<br><br>
 ![](/screenshot1.png)<br>
 ![](/screenshot2.png)
 <br><br>
+## 概述
 本主题是一个黑色科幻风格的日志文章展示主题。主题具备一个“页面展开”功能，在点击设定按钮后，整个页面才会完整展开，完整的日志和侧边栏内容才会显示出来。<br>
-除此以外，本主题还使用了其他多个插件。<br>
+<br>
+## 分辨率
+主题会根据分辨率宽度调整布局，共三种布局模式分别自动适应手机、窄屏和宽屏<br>
+在主页等多文章展示页面，日志文章的宽度是固定的。进入单页日志文章宽度会更宽<br>
+<br>
+## 置顶
+多日志展示页面中的置顶文章样式是单独制作的。<br>
+<br>
+## 侧边栏
+侧边栏中的功能，除了wordpress默认的小工具以外。<br>
+经典文章是由链接插件实现的单独一种分类文章展示。<br>
+登录窗口是由插件实现的主页登录入口。<br>
+微博功能是利用微博官方文档中提到的API实现。×注1<br>
+网站音乐播放器固定在屏幕下方，由开源项目制作。<br>
+<br>
+## 插件和开源项目
 主题中所使用的开源项目包括以下：<br>
 <b>MetingJS</b><br>
 https://github.com/metowolf/MetingJS<br>
@@ -32,6 +48,7 @@ https://github.com/FortAwesome/Font-Awesome<br>
         Login With Ajax<br>
         WP User Avatar</b><br>
         <br>
+ ### ×注1      
 <b>在使用本主题时请注意：</b><br>
 微博外联展示功能通过微博API实现，而微博API需要用户自行前往https://open.weibo.com/
 申请权限，本主题并不提供相关权限。<br>
