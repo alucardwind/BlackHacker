@@ -1,4 +1,4 @@
-# Black-Hack-theme
+# BlackHack theme
 这是一个我个人制作的wordpress主题，你可以直接进入我的网站观看效果
 https://www.redonleft.com<br><br>
 或者
