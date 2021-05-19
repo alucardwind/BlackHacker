@@ -47,8 +47,11 @@ https://github.com/FortAwesome/Font-Awesome<br>
 <b>Prime Strategy Page Navi<br>
         <s>Sidebar Login</s>因太久不更新已经不适应现在的版本<br>
         Login With Ajax<br>
-        WP User Avatar</b><br>
-        <br>
+        <s>WP User Avatar</s>插件自行更新至ProfilePress
+        ProfilePress ×注2
+</b>
+<br>
+<br>
  ### ×注1      
 <b>在使用本主题时请注意：</b><br>
 微博外联展示功能通过微博API实现，而微博API需要用户自行前往https://open.weibo.com/
@@ -59,3 +62,6 @@ get_weibo();<br>
 https://github.com/xiaosier/libweibo<br>
 在weibo.php中修改34行，填入你的权限代码<br>
 $c = new SaeTClientV2( '', '', '' );<br>
+<br>
+### ×注2
+在WP User Avatar升级为ProfilePress后会提醒网站管理员自动创建一系列page，用于登录、注册等。然而redonleft.com会自动展示所有page，增加这些page后会导致page导航过长。此外，redonleft.com是一个私人网站，并不开放会员注册。基于以上原因，在使用本主题的时候，请根据自己的实际情况进行选择是否创建这些page。我推荐不要创建，本主题仅使用该插件的基础功能。<br>
