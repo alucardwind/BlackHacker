@@ -43,6 +43,6 @@ function theme_slug_setup() {
 }
 
 function change_admin_style() {
-    wp_enqueue_script( 'change_admin', get_template_directory_uri() . '/js/wp_admin_function.js', array( 'jquery' ) );
+    wp_enqueue_script( 'change_admin', get_template_directory_uri() . '/js/wp_admin_function.js', array('jquery') );
 }
 add_action( 'admin_enqueue_scripts', 'change_admin_style' );

@@ -1,31 +1,49 @@
 <?php
-rol_player(array('type' => 'netease')); 
+rol_player(array('type' => 'netease'));
+if (is_singular()) {
+    echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/s_content_Function.js'></script>";
+} else {
+    echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
+}
 ?>
 <script>
     if(yes_thin == 1){
+        //此处修复需要在宽屏模式CSS加载后进行替代，需要在上方JS后面
         $("body").css("background","none");
         $("#page").css("width","533px");
         $(".mask-main").css("width","533px");
         $(".mask-left").css("width","533px");
         $(".col1").css("width","533px");
-        $("#logoright").css("margin-left","0");
-        $("#logoleft").css("padding-left","0");
-        $(".nav-menu").css("display","none");
-        $(".sticky").css("display","none");
-        $(".col2").css("display","none");
+        //$("#logoright").css("margin-left","0");
+        $('#logoborder').css("height",'auto');
+        $(".nav-menu").css('display','none');
+        $(".sticky").remove();
+        $(".col2").css('display','none');
         $("#to_right_buttom").css("display","block");
         $("#page_to_right_buttom").css("display","block");
     }
     if(yes_middle == 1){
         $(".sticky").css("display","none");
-        let cha = 1349 - page_width;
-        let old_width = document.getElementById("col1").offsetWidth;
-        let new_width = old_width - cha;
-        $(".col1").css("width","784px");
         $(".nav-menu").css("display","none");
         $(".nav-menu_yes_middle").css("display","block");
+        $(".col1").css("width","533px");
+        let page_width = $('#page').width();
+        let mask_main_width = $('.mask-main').width();
+        let mask_main_left = (page_width - mask_main_width) / 2;
+        if (mask_main_left < 0){
+            mask_main_left = 0;
+        }
+        $('.mask-main').css('margin-left',mask_main_left+'px');
     }
-
+    if(yes == 0 && yes_thin == 0 && yes_middle == 0){
+        let page_width = $('#page').width();
+        let mask_main_width = $('.mask-main').width();
+        let mask_main_left = (page_width - mask_main_width) / 2;
+        if (mask_main_left < 0){
+            mask_main_left = 0;
+        }
+        $('.mask-main').css('margin-left',mask_main_left+'px');
+    }
     $("#button-out").click(function () {
         let runout = runEffectout();
     });
@@ -76,11 +94,8 @@ rol_player(array('type' => 'netease'));
     //为元素挂上阴影并开启特效
     different_start();
     fix_page_nav_href();
+    //网页加载完毕后载入
+    $(function () {
+
+    });
 </script>
-<?php
-if (is_singular()) {
-	echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/s_content_Function.js'></script>";
-} else {
-	echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
-}
-?>

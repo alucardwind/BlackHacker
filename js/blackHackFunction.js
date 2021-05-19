@@ -6,25 +6,38 @@ let yes;
 let yes_thin;
 let yes_middle;
 let xmlhttp;
-let logo_position_right;
-let logo_position_left;
+let title_position_m;
+let title_position_s;
 
+//用于修改总标题位置
 function logo_position(singular_or_not){
-	let logo_width = $('#logoright').width();
-	logo_width = logo_width / 2;
-	logo_width = logo_width.toFixed(0);
-	let col1_width = $('.col1').width();
-    logo_position_right = col1_width - logo_width - 70;
 	let page_width = $('#page').width();
-	page_width = page_width / 2;
-	page_width = page_width.toFixed(0);
-	logo_position_left = page_width - logo_width - 70;
-    if(singular_or_not == "m"){
-        $('#logoright').css('margin-left',logo_position_right + "px");
-    }
-	else if(singular_or_not == "s"){
-        $('#logoright').css('margin-left',logo_position_left + "px");
-    }
+	let col1_width = $('#col1').width();
+	let m_left = 0
+	if(yes_thin == 1){
+
+	}
+	else {
+		let min_width = page_width - 270;
+		if(page_width >= 1871){
+			title_position_m = 1574 - 70 - 247;
+		}
+		else if(page_width >= 1323){
+			m_left = (page_width - 1323) / 2;
+			title_position_m = 1053 + m_left - 70 - 247;
+		}
+		else {
+			m_left = (page_width - 803) / 2;
+			title_position_m = 533 + m_left - 70 - 247;
+		}
+		title_position_s = page_width / 2 - 70 -247;
+		if(singular_or_not == "m"){
+			$('#logoright').css('margin-left',parseInt(title_position_m) + "px");
+		}
+		else if(singular_or_not == "s"){
+			$('#logoright').css('margin-left',parseInt(title_position_s) + "px");
+		}
+	}
 }
 
 function runEffectout() {
@@ -59,7 +72,7 @@ function runEffectout() {
 									if(sidebar_fix_bool){
 										sidebar_weibo_a();
 									}
-									$("#logoright").animate({marginLeft:logo_position_left + "px"}, 600,function(){
+									$("#logoright").animate({marginLeft:title_position_s + "px"}, 600,function(){
 										$("#button_out_right").toggle("slide", {direction: "up"}, 800);
 										$("#button-in").toggle("slide", {direction: "up"}, 800);
 										$("#button_out_left").toggle("slide", {direction: "up"}, 800);
@@ -95,7 +108,9 @@ function runEffectin() {
 								$(".avatar_container").toggle("slide", {direction: "up"}, 600);
 								$('#weibo').toggle("slide", {direction: "up"}, 600);
 								$("#button-out").toggle("slide", {direction: "up"}, 800,function(){
-									$("#logoright").animate({marginLeft:logo_position_right + "px"}, 600);
+									if(yes_thin != 1){
+										$("#logoright").animate({marginLeft:title_position_m + "px"}, 600);
+									}
 								});
 							}
 						});
@@ -1338,12 +1353,12 @@ function fit_screen(page_width) {
 	} else {
 		yes = 0;
 	}
-	if (page_width < 1000) {
+	if (page_width < 803) {
 		yes_thin = 1;
 	} else {
 		yes_thin = 0;
 	}
-	if(page_width >= 1000 && page_width < 1349 ){
+	if(page_width >= 803 && page_width < 1323 ){
 		yes_middle = 1;
 	}
 	else {
@@ -1529,12 +1544,6 @@ function title_hover() {
 function single_page_fix_size(){
 	let post = $(".single_postwords");
 	if(post == null){return;}
-	let post_width = post.width() - 4;
-	$('iframe').each(function(){
-		$(this).width(post_width);
-		let post_height = post_width / 16 * 9 + 68;
-		$(this).height(post_height);
-	});
     let post_height = post.outerHeight();
     $('.postborder').height(post_height);
 }
@@ -1889,6 +1898,7 @@ function cover_anmie() {
 		ctx.beginPath();
 		ctx.rect(0, 0, width, height);
 		ctx.fillStyle = '#000000';
+		ctx.globalAlpha = 0.2;
 		ctx.fill();
 	}
 
@@ -1907,6 +1917,7 @@ function cover_anmie() {
 				ctx.beginPath();
 				ctx.lineWidth = 0.8;
 				ctx.strokeStyle = "#ffff00";
+				ctx.globalAlpha = 1;
 				ctx.moveTo(this.x1, this.y1);
 				ctx.lineTo(this.x, this.y);
 				ctx.stroke();
@@ -1985,4 +1996,20 @@ function cover_anmie() {
 			delete travelers.pop();
 		}
 	}
+}
+
+//用于修复插入链接产生网页预览
+function embed_fix(s_or_not) {
+	$('.wp-block-embed__wrapper').each(function () {
+		$(this).find('blockquote').css('display','none');
+		let find_iframe = $(this).find('iframe');
+		find_iframe.css('position','relative');
+		find_iframe.removeAttr('width');
+		if(s_or_not == 'm'){
+			find_iframe.css('height','215px');
+		}
+		else if(s_or_not == 's'){
+			find_iframe.css('height','175px');
+		}
+	});
 }

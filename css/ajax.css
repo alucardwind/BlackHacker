@@ -1,0 +1,13 @@
+#show_large_image{
+    border: 2px solid #58c7ee;
+    background-color: rgba(88, 199, 238, 0.2);
+    padding: 5px;
+    display: none;
+    z-index: 11;
+}
+
+#ajax_img_close{
+    color: black;
+    background: white;
+    clear: both;
+}

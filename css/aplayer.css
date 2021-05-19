@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* aplayer CSS Document */
+.aplayer.aplayer-fixed {
+	z-index: 19;
+}
+
+.aplayer.aplayer-fixed .aplayer-body{
+background: rgba(88,199,238,0.2);
+	z-index: 19;
+}
+.aplayer{
+background: rgba(88,199,238,0.2);
+color: #58c7ee;
+}
+.aplayer .aplayer-miniswitcher {
+background: #58c7ee;
+}
+.aplayer.aplayer-fixed .aplayer-info {
+border-top: 1px solid #58c7ee;
+}
+.aplayer.aplayer-fixed .aplayer-list {
+border: 1px solid #58c7ee;
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc {
+	z-index: 18;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+fill: #000;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+fill: red;
+}
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+	color: #ccc;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap {
+	z-index: 19;
+}
