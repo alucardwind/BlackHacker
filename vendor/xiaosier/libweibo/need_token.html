@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>获取Access Token/title>
+</head>
+<body>
+<form action="https://api.weibo.com/oauth2/access_token" method="post">
+    <input type="text" name="client_id" value="1916930258">
+    <input type="text"  name="client_secret" value="bcfb3ba2c7fed73817113a63f3167376">
+    <input type="text"  name="grant_type" value="authorization_code">
+    <input type="text"  name="code" value="">
+    <?--https://api.weibo.com/oauth2/authorize?client_id=1916930258&response_type=code&redirect_uri=https://www.redonleft.com/wp-content/themes/blackhack/vendor/xiaosier/libweibo/callback.php-->
+    <input type="text"  name="redirect_uri" value="https://www.redonleft.com/wp-content/themes/blackhack/vendor/xiaosier/libweibo/callback.php">
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+logo_position("m");
+mobile_buttom_up();
+mobile_buttom_down();
+mobile_sidebar_up();
+mobile_sidebar_down();
+col3_sidebar_action();
+weibo_user_left();
+//修正引用链接尺寸问题
+embed_fix("m");

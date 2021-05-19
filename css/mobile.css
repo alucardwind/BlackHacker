@@ -1,0 +1,163 @@
+#col3{
+    position: fixed;
+    width: 275px;
+    top: 0px;
+    z-index: 12;
+}
+
+#col3_block{
+    width: 230px;
+    height: 500px;
+    float: left;
+}
+
+#col3_con1{
+    float: left;
+    width: 230px;
+}
+
+#col3_con2{
+    float: left;
+    width: 230px;
+}
+
+#to_right_buttom{
+    display: none;
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+    float: left;
+    width: 43px;
+    margin-top: 20px;
+    cursor: default;
+}
+
+.mobile_button_up{
+    float: left;
+    width: 43px;
+    height: 43px;
+}
+.mobile_buttom_content{
+    background-color: #58c7ee;
+    float: left;
+    width: 43px;
+    text-align: center;
+}
+.mobile_button_down{
+    float: left;
+    width: 43px;
+    height: 43px;
+}
+
+.move_right{
+    left: 0;
+}
+
+.move_left{
+    left: -232;
+}
+
+.col3_con1_display_none{
+    display: none;
+}
+
+.col3_con1_display_block{
+    display: block;
+}
+
+.col3_con2_display_none{
+    display: none;
+}
+
+.col3_con2_display_block{
+    display: block;
+}
+
+.page_move_right{
+    left: 0;
+}
+
+.page_move_left{
+    left: -232;
+}
+
+.mobile_sidebar_up{
+    width: 230px;
+    height: 20px;
+    float: left;
+}
+
+.mobile_sidebar_down{
+    width: 230px;
+    height: 20px;
+    float: left;
+}
+
+#sidebar_mobile{
+    float: left;
+    width: 230px;
+    border-right: 2px solid #58c7ee;
+    background-color: #000000;
+    font-size: 20px;
+}
+
+#sidebar_mobile li{
+    list-style: none;
+}
+
+#sidebar_mobile li label{
+    display: none;
+}
+
+#sidebar_mobile li ul li{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    list-style: none;
+}
+
+#sidebar_mobile li h2{
+    width: 80%;
+    text-align: center;
+    border: none;
+    border-bottom: 2px #58c7ee solid;
+    padding: 8px 0px 8px 0px;
+    float: left;
+    font-size:24px;
+}
+
+#sidebar_mobile li h2 span{
+    font-size:24px;
+}
+
+#pagebar_mobile{
+    float: left;
+    width: 230px;
+    border-right: 2px solid #58c7ee;
+    background-color: #000000;
+    font-size: 20px;
+    height: 500px;
+}
+
+#page_to_right_buttom{
+    display: none;
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+    float: left;
+    width: 43px;
+    margin-top: 5px;
+    cursor: default;
+}
+
+.nav-menu_col3 ul{
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.nav-menu_col3 ul li{
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px #58c7ee solid;
+}
