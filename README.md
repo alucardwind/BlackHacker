@@ -64,4 +64,4 @@ https://github.com/xiaosier/libweibo<br>
 $c = new SaeTClientV2( '', '', '' );<br>
 <br>
 ### ×注2
-在WP User Avatar升级为ProfilePress后会提醒网站管理员自动创建一系列page，用于登录、注册等。然而redonleft.com会自动展示所有page，增加这些page后会导致page导航过长。此外，redonleft.com是一个私人网站，并不开放会员注册。基于以上原因，在使用本主题的时候，请根据自己的实际情况进行选择是否创建这些page。我推荐不要创建，本主题仅使用该插件的基础功能。<br>
+在WP User Avatar升级为ProfilePress后会提醒网站管理员自动创建一系列page，用于登录、注册等。然而本主题会自动展示所有page，增加这些page后会导致page导航过长。此外，redonleft.com是一个私人网站，并不开放会员注册。基于以上原因，在使用本主题的时候，请根据自己的实际情况进行选择是否创建这些page。我推荐不要创建，本主题仅使用该插件的基础功能。<br>
