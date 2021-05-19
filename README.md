@@ -47,7 +47,7 @@ https://github.com/FortAwesome/Font-Awesome<br>
 <b>Prime Strategy Page Navi<br>
         <s>Sidebar Login</s>因太久不更新已经不适应现在的版本<br>
         Login With Ajax<br>
-        <s>WP User Avatar</s>插件自行更新至ProfilePress
+        <s>WP User Avatar</s>插件自行更新至ProfilePress<br>
         ProfilePress ×注2
 </b>
 <br>
