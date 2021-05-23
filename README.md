@@ -25,7 +25,7 @@ https://github.com/alucardwind/redonleft_player<br>
 <b>redonleft_copyright</b><br>
 https://github.com/alucardwind/redonleft_copyright<br>
 用于网页显示和简单的编辑网站版权信息<br>
-<b>libweibo</b><br>
+<b>libweibo</b>×注1<br>
 https://github.com/xiaosier/libweibo<br>
 新浪微博开放平台php sdk<br>
 <b>Font-Awesome</b><br>
