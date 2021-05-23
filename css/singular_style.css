@@ -1,0 +1,20 @@
+.postborder {
+    display: block;
+    width: auto;
+}
+
+#sidebar li ul {
+    display: block;
+}
+
+#sidebar li select {
+    display: block;
+}
+
+.avatar_container {
+    display: block;
+}
+
+.col3 {
+    float: right;
+}
