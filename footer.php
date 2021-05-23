@@ -1,6 +1,14 @@
 <?php
 rol_player(array('type' => 'netease'));
+if(is_page()){
+    echo "<style>
+        .nav-menu li {
+            display: block;
+        }
+    </style>";
+}
 if (is_singular()) {
+    echo "<link rel='stylesheet' href='" . esc_url( get_template_directory_uri() ) . "/css/singular_style.css' type='text/css' media='screen'/>";
     echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/s_content_Function.js'></script>";
 } else {
     echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
