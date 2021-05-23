@@ -4,8 +4,7 @@ https://www.redonleft.com<br><br>
 或者
 大致长下面这个样子<br><br>
 ![](/screenshot.png)<br>
-![](/screenshot1.png)<br>
-![](/screenshot2.png)
+![](/screenshot1.png)
 <br><br>
 ## 概述
 再次说明：本主题是一个基于wordpress框架的个人博客主题，使用的前提是你已经拥有一个使用wordpress框架的博客网站。<br>
