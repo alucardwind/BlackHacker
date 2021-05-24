@@ -647,6 +647,7 @@ a:hover {
 
 .sticky h3{
     border: none;
+    float: left;
 }
 
 .sticky #comment_left {
@@ -682,12 +683,50 @@ a:hover {
     clear: none;
 }
 
+.sticky #comments_inline form input {
+    background: 0;
+    border: 1px #58c7ee solid;
+    width: 160px;
+}
+
+.sticky #comments_inline form .comment-notes{
+    display: none;
+}
+
+.sticky #comments_inline form .comment-form-cookies-consent{
+    display: none;
+}
+
+.sticky #comments_inline form .comment-form-author{
+    margin: 5px 0 0 0;
+}
+
+.sticky #comments_inline form .comment-form-email{
+    margin: 5px 0 0 0;
+}
+
+.sticky #comments_inline form .comment-form-url{
+    margin: 5px 0 0 0;
+}
+
+.sticky #comments_inline form .comment-form-comment{
+    margin: 19px 0 0 0;
+}
+
+.sticky #comments_inline form .comment-form-comment label{
+    display: none;
+}
+
+.sticky #comments_inline form #submit {
+    width: 100px;
+}
+
 .sticky #comments_inline form p {
-    float: left;
+    float: right;
 }
 
 .sticky #comment {
-    width: 295px;
+    width: 374px;
     background: 0;
     border-top: 2px #58c7ee solid;
     border-left: 2px #58c7ee solid;
@@ -712,16 +751,6 @@ a:hover {
     margin-top: 10px;
     width: 83px;
     height: 85px;
-}
-
-.sticky #submit {
-    clear: both;
-    margin-left: 10px;
-}
-
-.sticky .comments input {
-    background: 0;
-    border: 1px #58c7ee solid;
 }
 
 .pagetitle{
@@ -783,8 +812,7 @@ a:hover {
 
 .postwords img {
     padding: 5px;
-    margin: 5px;
-    margin-bottom: 0;
+    margin: 5px 5px 0 5px;
     border-top: 1px #58c7ee solid;
     border-bottom: 1px #58c7ee dashed;
 }
@@ -1195,6 +1223,7 @@ figure {
     border-bottom: 2px solid #CCC;
     padding: 8px;
     clear: both;
+    background-color: rgba(88, 199, 238, 0.2);
 }
 
 .comments p {
@@ -1210,14 +1239,17 @@ figure {
 .comments textarea {
     background: 0;
     color: #FFF;
+    width: 100%;
 }
 
 .comments ol li {
     margin-bottom: 30px;
+    border-bottom: 2px solid #58c7ee;
 }
 
 .comments ol li ul li {
     list-style-type: none;
+    border-bottom: none;
 }
 
 .comments-title {
@@ -1226,10 +1258,11 @@ figure {
 
 #comments {
     margin-bottom: 8px;
+    margin-top: 15px;
 }
 
 .comment-meta {
-    float: left;
+
 }
 
 .commentlist {
@@ -1237,22 +1270,24 @@ figure {
     margin-bottom: 8px;
 }
 
+.comment-body{
+    border-bottom: 1px solid #58c7ee;
+}
+
 .children {
     margin-left: 40px;
 }
 
 #comments_inline {
-    float: left;
-    width: 45%;
+
 }
 
 #comments_inline .comments-title {
-    float: right;
+
 }
 
 #comments_inline form {
-    float: right;
-    clear: both;
+
 }
 
 /*以下为sidebar样式*/

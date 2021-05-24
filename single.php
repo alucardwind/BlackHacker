@@ -53,7 +53,7 @@
                                         <div class="postwords single_postwords">
                                             <?php the_content('...点这里浏览全文 »'); ?>
                                             <!-- 为日志中图片撑出足够高度 -->
-                                            <?php comments_template('', true); ?>
+                                            <?php comments_template('/comments.php', true); ?>
                                         </div>
                                         <canvas id="postwords_right_single" width="88"></canvas>
                                     </div>

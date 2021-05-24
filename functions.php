@@ -46,3 +46,26 @@ function change_admin_style() {
     wp_enqueue_script( 'change_admin', get_template_directory_uri() . '/js/wp_admin_function.js', array('jquery') );
 }
 add_action( 'admin_enqueue_scripts', 'change_admin_style' );
+
+//更改comment的input顺序
+function change_fields_order( $fields ) {
+    $comment_field = $fields['comment'];
+    $author_field = $fields['author'];
+    $email_field = $fields['email'];
+    $url_field = $fields['url'];
+    $cookies_field = $fields['cookies'];
+    unset( $fields['comment'] );
+    unset( $fields['author'] );
+    unset( $fields['email'] );
+    unset( $fields['url'] );
+    unset( $fields['cookies'] );
+    // the order of fields is the order below, change it as needed:
+    $fields['author'] = $author_field;
+    $fields['email'] = $email_field;
+    $fields['url'] = $url_field;
+    $fields['comment'] = $comment_field;
+    $fields['cookies'] = $cookies_field;
+    // done ordering, now return the fields:
+    return $fields;
+}
+add_filter( 'comment_form_fields', 'change_fields_order' );

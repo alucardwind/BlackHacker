@@ -13,6 +13,7 @@ if (is_singular()) {
 } else {
     echo "<script src='" . esc_url(get_template_directory_uri()) . "/js/m_content_Function.js'></script>";
 }
+wp_footer();
 ?>
 <script>
     if(yes_thin == 1){

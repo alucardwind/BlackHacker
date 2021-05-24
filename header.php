@@ -8,7 +8,6 @@ require 'saetv2.ex.class.php'
 
 <html <?php language_attributes(); ?>>
 <head>
-
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
