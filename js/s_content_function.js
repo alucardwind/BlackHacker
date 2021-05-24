@@ -41,8 +41,9 @@ if (yes == 1) {
 	}
 }
 need_cookie(page_width);
-postwords_left_single();
-postwords_right_single();
 logo_position("s");
 //修正引用链接尺寸问题
 embed_fix("s");
+postwords_left_single();
+postwords_right_single();
+

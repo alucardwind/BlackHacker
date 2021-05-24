@@ -2003,13 +2003,13 @@ function embed_fix(s_or_not) {
 	$('.wp-block-embed__wrapper').each(function () {
 		$(this).find('blockquote').css('display','none');
 		let find_iframe = $(this).find('iframe');
-		find_iframe.css('position','relative');
 		find_iframe.removeAttr('width');
+		find_iframe.removeAttr('height');
 		if(s_or_not == 'm'){
-			find_iframe.css('height','215px');
+			$(this).css('height','215px');
 		}
 		else if(s_or_not == 's'){
-			find_iframe.css('height','175px');
+			$(this).css('height','175px');
 		}
 	});
 }
