@@ -8,7 +8,7 @@
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">
                     <div class="name">
-                        <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+                        <a href="<?php echo esc_url(home_url('/')); ?>"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
                            rel="home"><?php bloginfo('name'); ?></a>
                     </div>

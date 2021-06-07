@@ -102,7 +102,7 @@ wp_footer();
 
     //为元素挂上阴影并开启特效
     different_start();
-    fix_page_nav_href();
+    // fix_page_nav_href();
     //网页加载完毕后载入
     $(function () {
 

@@ -2,8 +2,9 @@
 <!-- index -->
 <body>
 <?php
-if($_GET['from_site'] !=1 ){
+if($_COOKIE['from_site'] !=1 ){
 	require_once 'cover.php';
+    setcookie('from_site', 1, 0);
 }
 ?>
 <div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
@@ -14,7 +15,7 @@ if($_GET['from_site'] !=1 ){
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">
                     <div class="name">
-                        <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+                        <a href="<?php echo esc_url(home_url('/')); ?>"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
                            rel="home"><?php bloginfo('name'); ?></a>
                     </div>
