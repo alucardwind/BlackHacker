@@ -2,9 +2,9 @@
 <!-- index -->
 <body>
 <?php
-if($_COOKIE['from_site'] !=1 ){
+if($_COOKIE['from_site'] != 1){
+    //echo $_COOKIE['from_site'];
 	require_once 'cover.php';
-    setcookie('from_site', 1, 0);
 }
 ?>
 <div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
@@ -45,7 +45,7 @@ if($_COOKIE['from_site'] !=1 ){
             ?>
             <div id="col1" class="col1">
                 <script type='text/javascript'>
-                    var page_width = document.querySelector("body").offsetWidth;
+                    var page_width = document.body.clientWidth;
                     fit_screen(page_width);
                     if (yes == 1) {
                         var page = document.querySelector("#page");

@@ -1389,6 +1389,7 @@ function need_cookie(page_width) {
 		document.cookie = "width_bool=" + yes;
 		document.cookie = "width_thin_bool=" + yes_thin;
 		document.cookie = "page_width=" + page_width;
+		setCookie('from_site',null);
 		location.reload();
 	}
 }
@@ -1565,7 +1566,7 @@ function load_time(){
 function getCookie(name){
 	let arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
 	if(arr=document.cookie.match(reg)){
-		return unescape(arr[2]);
+		return decodeURI(arr[2]);
 	}
 	else{
 		return null;
@@ -1573,7 +1574,7 @@ function getCookie(name){
 }
 
 function setCookie(name,value){
-	document.cookie = name + "="+ escape (value) + ";";
+	document.cookie = name + "="+ encodeURI(value) + ";expires=0";
 }
 
 function border_loop() {

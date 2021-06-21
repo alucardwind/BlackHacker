@@ -9,4 +9,5 @@ window.onload = function(){
             ab_item_array[i].attributes['href'].nodeValue = ab_item_href;
         }
     }
+    // document.cookie = "from_site=1;expires=0";
 }

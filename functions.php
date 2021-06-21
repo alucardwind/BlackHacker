@@ -69,3 +69,8 @@ function change_fields_order( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_fields', 'change_fields_order' );
+
+function set_cookie(){
+    setcookie('from_site', 1, 0, COOKIEPATH, COOKIE_DOMAIN, false);
+}
+add_action( 'after_setup_theme', 'set_cookie');
