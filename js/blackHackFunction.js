@@ -200,7 +200,7 @@ function img_fix(){
 				}
 			}
 		}
-		//console.log(img);
+
 		//为了兼容图片格式的再次变化，进行修改
 		img = this.querySelector('figure a img');
 		img_width = $(img).attr('width');
@@ -263,6 +263,17 @@ function img_fix(){
 			}
 		}
 	}
+
+	//以下用于修复meida_text
+	$('.wp-block-media-text').each(function () {
+		img = this.querySelector('img');
+		let words = this.querySelector('.wp-block-media-text__content');
+		let ih = $(img).height();
+		let wh = $(words).height();
+		$(img).removeAttr('width');
+		$(img).attr('height',wh);
+		$(img).css('object-fit','cover');
+	});
 }
 
 
