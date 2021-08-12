@@ -2,8 +2,7 @@
 <!-- index -->
 <body>
 <?php
-if($_COOKIE['from_site'] != 1){
-    //echo $_COOKIE['from_site'];
+if($_COOKIE['from_site'] != 1 && $_GET['from_site'] != 1){
 	require_once 'cover.php';
 }
 ?>
@@ -129,6 +128,7 @@ if($_COOKIE['from_site'] != 1){
                         }
                         get_content();
                         if ($con3_yes == 0) {
+	                        //$posts是wordpress自带全局变量
                             if ($num == 3 || $num == 6 || $num == count($posts)) {
                                 echo " </div> ";
                             }
