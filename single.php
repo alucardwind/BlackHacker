@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header();
+$col3_yes = $_COOKIE["width_thin_bool"];
+?>
 <body>
 <div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
     <div id="header">
@@ -81,7 +84,11 @@
                     <div id="last"></div>
                 </div>
                 <!-- col1 -->
-                <?php get_sidebar(); ?>
+                <?php
+                if($col3_yes != 1){
+                    get_sidebar();
+                }
+                ?>
             </div>
             <!-- mask-left -->
         </div>

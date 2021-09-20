@@ -824,6 +824,19 @@ a:hover {
     margin-bottom: 0;
 }
 
+.postwords .wp-block-media-text{
+    margin-right: 20px;
+}
+
+.postwords .wp-block-quote p{
+    line-height: 1.5em;
+    font-style: italic;
+}
+
+.postwords .wp-block-quote cite{
+    line-height: 2em;
+}
+
 .postwords strong {
     color: #000;
     background: #FFF;

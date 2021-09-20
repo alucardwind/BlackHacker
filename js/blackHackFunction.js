@@ -85,6 +85,7 @@ function runEffectout() {
 			});
 		}
 	});
+	//img_fix();
 }
 
 function runEffectin() {
@@ -139,8 +140,6 @@ function gallery_fix(){
 		$(this).css('border','none');
 	});
 	$('.blocks-gallery-item').each(function () {
-		//$(this).css('marginLeft',7);
-		//$(this).css('marginRight',7);
 		let img = this.querySelector('figure a img');
 		$(img).height(100);
 		$(img).css('border','none');
@@ -158,115 +157,9 @@ function gallery_fix(){
 }
 
 function img_fix(){
-	let img;
-	let figure_width;
-	let figure_height;
-	let img_width;
-	let img_height;
-	let bili;
-	let get_pos;
-	$('.wp-block-image').each(function () {
-		img = this.querySelector('figure img');
-		img_width = $(img).attr('width');
-		if(img_width != 0) {
-			img_height = $(img).attr('height');
-			bili = img_height / img_width;
-			figure_width = this.offsetWidth;
-			get_pos = this.querySelector('.aligncenter');
-			if (get_pos) {
-				if (img_width > figure_width) {
-					figure_width = figure_width - 20;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-			get_pos = this.querySelector('.alignleft');
-			if (get_pos) {
-				if (img_width > figure_width / 2) {
-					figure_width = (figure_width - 20) / 2;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-			get_pos = this.querySelector('.alignright');
-			if (get_pos) {
-				if (img_width > figure_width / 2) {
-					figure_width = (figure_width - 20) / 2;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-		}
-
-		//为了兼容图片格式的再次变化，进行修改
-		img = this.querySelector('figure a img');
-		img_width = $(img).attr('width');
-		if(img_width != 0) {
-			img_height = $(img).attr('height');
-			bili = img_height / img_width;
-			figure_width = this.offsetWidth;
-			get_pos = this.querySelector('.aligncenter');
-			if (get_pos) {
-				if (img_width > figure_width) {
-					figure_width = figure_width - 20;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-			get_pos = this.querySelector('.alignleft');
-			if (get_pos) {
-				if (img_width > figure_width / 2) {
-					figure_width = (figure_width - 20) / 2;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-			get_pos = this.querySelector('.alignright');
-			if (get_pos) {
-				if (img_width > figure_width / 2) {
-					figure_width = (figure_width - 20) / 2;
-					figure_height = figure_width * bili;
-					$(img).width(figure_width);
-					$(img).height(figure_height);
-				}
-			}
-		}
-	});
-
-	//以下用于兼容老版编辑器输出的文章图片
-	let pw_width;
-	let pw_array = document.getElementsByClassName('postwords');
-	for(let ii = 0; ii<pw_array.length; ii++){
-		let img_array = pw_array[ii].querySelectorAll('p img');
-		if(img_array.length > 0){
-			pw_width = pw_array[ii].offsetWidth;
-			for(let iii = 0; iii<img_array.length; iii++){
-				img_width = img_array[iii].naturalWidth;
-				img_height = img_array[iii].naturalHeight;
-				bili = img_height / img_width;
-				if(img_array[iii].classList.contains("aligncenter") && img_width > pw_width){
-					img_width = pw_width -70;
-				}
-				if(img_array[iii].classList.contains("alignleft") || img_array[iii].classList.contains("alignright")){
-					if(img_width > pw_width / 2){
-						img_width = (pw_width -70)/2;
-					}
-				}
-				img_height = bili*img_width;
-				$(img_array[iii]).width(img_width);
-				$(img_array[iii]).height(img_height);
-			}
-		}
-	}
-
 	//以下用于修复meida_text
 	$('.wp-block-media-text').each(function () {
-		img = this.querySelector('img');
+		let img = this.querySelector('img');
 		let words = this.querySelector('.wp-block-media-text__content');
 		let ih = $(img).height();
 		let wh = $(words).height();
@@ -274,6 +167,20 @@ function img_fix(){
 		$(img).attr('height',wh);
 		$(img).css('object-fit','cover');
 	});
+
+	$('#col1 img').each(function () {
+		if($(this).parent().hasClass('alignright') || $(this).parent().hasClass('alignleft')){
+			let img_width = this.offsetWidth / 2;
+			$(this).width(img_width);
+		}
+		else if(!$(this).parent().hasClass('wp-block-media-text__media')){
+			$(this).width(420);
+		}
+		if(!$(this).parent().hasClass('wp-block-media-text__media')){
+			$(this).removeAttr('height');
+		}
+	});
+
 }
 
 

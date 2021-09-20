@@ -2,7 +2,8 @@
 <!-- index -->
 <body>
 <?php
-if($_COOKIE['from_site'] != 1 && $_GET['from_site'] != 1){
+$col3_yes = $_COOKIE["width_thin_bool"];
+if($_COOKIE['from_site'] != 1 && $_GET['from_site'] != 1 && $col3_yes != 1){
 	require_once 'cover.php';
 }
 ?>
@@ -37,7 +38,6 @@ if($_COOKIE['from_site'] != 1 && $_GET['from_site'] != 1){
             <div id="show_large_image"></div>
             <!-- first column -->
             <?php
-            $col3_yes = $_COOKIE["width_thin_bool"];
             if($col3_yes == 1){
                 include 'sidebar_mobile.php';
             }
