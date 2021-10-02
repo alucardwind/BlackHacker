@@ -25,6 +25,7 @@
 		<path id="svg_6" d="m175,150 c0,0 10,90 165,80 c-5,-26.54687 -20,-90 -165,-80"/>
 		</svg>
 	</div>
+    <div id="notice_area">点击空格或回车或ESC按钮都可以跳过本动画/Press Enter or ESC or Space to skip this animation</div>
     <div id="cover_bottom" class="cover_border"></div>
 </div>
 <script>

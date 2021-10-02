@@ -1662,7 +1662,6 @@ coder.prototype = {
 			$('#' + dom).scrollTop( $('#' + dom)[0].scrollHeight);
 
 		}, del);
-		//console.log(del);
 	}
 }
 
@@ -1759,10 +1758,13 @@ function fix_area_position(){
 	let text_left = (screen_width - text_width - svg_width) / 2;
 	let text_top = (screen_height - text_height) / 2;
 	let svg_left = text_left + text_width;
+	let notice_top = text_top + text_height;
 	$('#text_area').css('left',text_left+'px');
 	$('#text_area').css('top',text_top+'px');
 	$('#svg_area').css('left',svg_left+'px');
 	$('#svg_area').css('top',text_top+'px');
+	$('#notice_area').css('left',text_left+'px');
+	$('#notice_area').css('top',notice_top+'px');
 }
 
 function press_enter(f_animate) {
@@ -1811,9 +1813,8 @@ function cover_anmie() {
 	setup();
 
 	function setup() {
-		canvas.width = width = document.body.clientWidth - 4;
+		canvas.width = width = document.body.clientWidth - 20;
 		canvas.height = height = document.body.clientHeight - 48;
-
 		ctx.beginPath();
 		ctx.rect(0, 0, width, height);
 		ctx.fillStyle = '#000000';
