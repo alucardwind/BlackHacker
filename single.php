@@ -6,7 +6,9 @@ $col3_yes = $_COOKIE["width_thin_bool"];
 <div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
     <div id="header">
         <div id="logoborder">
-            <canvas id="left_top" width="120" height="120"></canvas>
+            <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+               title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
+               rel="home"><canvas id="left_top" width="120" height="120"></canvas></a>
             <div id="logoright">
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">

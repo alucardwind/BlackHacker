@@ -85,7 +85,6 @@ function runEffectout() {
 			});
 		}
 	});
-	//img_fix();
 }
 
 function runEffectin() {
@@ -168,7 +167,7 @@ function img_fix(){
 		$(img).css('object-fit','cover');
 	});
 
-	$('#col1 img').each(function () {
+	$('.col1 img').each(function () {
 		if($(this).parent().hasClass('alignright') || $(this).parent().hasClass('alignleft')){
 			let img_width = this.offsetWidth / 2;
 			$(this).width(img_width);

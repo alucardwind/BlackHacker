@@ -4,7 +4,9 @@
 <div id="page" <?php if (!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
     <div id="header">
         <div id="logoborder">
-            <canvas id="left_top" width="120" height="120"></canvas>
+            <a href="<?php echo esc_url(home_url('/')); ?>?from_site=1"
+               title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
+               rel="home"><canvas id="left_top" width="120" height="120"></canvas></a>
             <div id="logoright">
                 <canvas class="logo_left titler" width="280" height="200"></canvas>
                 <div id="displayr">
@@ -71,7 +73,7 @@
                     button_out_left();
                     button_out_right();
                 </script>
-                <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+                <?php //$post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
                 <?php /* If this is a category archive */
                 if (is_category()) { ?>
                     <h2 class="pagetitle"><?php printf(__('以下文章归类于 &#8216;%s&#8217;','blackhack'), single_cat_title('', false)); ?></h2>
